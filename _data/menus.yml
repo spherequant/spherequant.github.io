@@ -1,13 +1,16 @@
 main:
+  - name: "Home"
+    url: "/"
+    weight: 3
   - name: "About"
     url: "/about/"
     weight: 4
-  - name: "Training"
-    url: "/training/"
-    weight: 5
   - name: "Contact"
     url: "/contact/"
-    weight: 6
+    weight: 5
+  - name: "Training"
+    url: "/training/"
+    weight: 7
 
 footer:
   - name: "Home"

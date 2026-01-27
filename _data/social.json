@@ -1,33 +1,12 @@
 [
   {
-    "name": "Github",
-    "link": "https://github.com/zerostaticthemes/jekyll-serif-theme",
-    "image": "images/social/github.svg"
-  },
-  {
     "name": "Twitter",
-    "link": "https://twitter.com/zerostaticio",
+    "link": "https://twitter.com/hemis_research",
     "image": "images/social/twitter.svg"
   },
   {
-      "name": "Facebook",
-      "link": "https://facebook.com",
-      "image": "images/social/facebook.svg"
-  },
-  {
       "name": "Email",
-      "link": "mailto:ekyllserif@example.com ",
+      "link": "mailto:contact@spherequant.com ",
       "image": "images/social/email.svg"
-  },
-  {
-      "name": "Instagram",
-      "link": "https://instagram.com",
-      "image": "images/social/instagram.svg"
-  },
-  {
-      "name": "Discord",
-      "link": "https://discord.com",
-      "image": "images/social/discord.svg"
   }
-
 ]

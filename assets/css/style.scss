@@ -8,29 +8,58 @@
 // Color System
 // =======================
 
-$primary: #333;
-$primary-dark: #1c1c1c;
-$secondary: #5c5a5a;
-$black: #1c1c1c;
-$white: #ffffff;
-$white-offset: #f8f8f8;
-$steel: #5c5a5a;
+// Institutional Slate Palette
+$primary: #334155;       // Slate 700 - Body Text
+$primary-dark: #002D04;  // Slate 900 - Headings / Header / Footer
+$secondary: #64748b;     // Slate 500 - Muted Text
+$black: #020617;         // Slate 950
+$white: #ffffff;         // Update this if the content cards need a specific color
+$white-offset: #FDFBF7;  // REPLACE THIS with the hex code from your image
+$steel: #94a3b8;         // Slate 400
+$border-color: #e2e8f0;  // Slate 200
+$accent: #0369a1;        // Sky 700 - Links/Actions
 
 // Links
-$link-color: $primary;
+$link-color: $accent;
 $link-decoration: none;
-$link-hover-color: $black;
-$link-hover-decoration: underline;
+$link-hover-color: $primary-dark;
+$link-hover-decoration: none;
 
 // Fonts
-$font-family-base: 'Geist', sans-serif;
-$font-family-heading: 'Berkeley', monospace;
-
+//$font-family-base:'TestSohneMono-Buch',sans-serif;
+//$font-family-base: 'TestSohne-Buch', sans-serif;
+$font-family-base: 'Space Grotesk', sans-serif;
+//$font-family-heading: 'TestSohneMono-Buch',sans-serif;
+//$font-family-heading: 'Carbon Plus' ;
+$font-family-heading: 'CarbonRegular' ;
 // Footer
-$footer-background-color: $white;
-$footer-text-color: $steel;
-$sub-footer-background-color: $white;
-$sub-footer-text-color: $steel;
+$footer-background-color: $primary-dark;
+$footer-text-color: $white-offset;
+$sub-footer-background-color: $black;
+$sub-footer-text-color: $secondary;
+
+// =======================
+// Mixins
+// =======================
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
 
 // =======================
 // Libraries
@@ -77,6 +106,10 @@ body {
   font-size: 16px;
   line-height: 1.2;
   font-family: $font-family-base;
+  color: $primary;
+  background-color: $white-offset;
+  margin: 0;
+  padding: 0;
 }
 
 /* Tablet and up */
@@ -87,37 +120,97 @@ body {
   }
 }
 
+.sub-footer{
+  background-color: $sub-footer-background-color;
+}
+
+.header {
+  display: block;
+  background-color: $primary-dark;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  margin: 0;
+}
+
+.main {
+  padding: 0;
+}
+
+.container, .content {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
 .professional-intro {
+  background-color: $white-offset;
+  color: $primary;
   padding: 6rem 0 8rem 0;
 
   h1 {
     font-size: 2.4rem;
     font-weight: 500;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: $primary-dark;
+    //text-transform: uppercase;
+  }
+
+  h2,h3,h4,h5,h6
+  {
+    font-family: $font-family-heading;
+    font-weight: 500;
+    //text-transform: uppercase;
   }
 
   p {
-    font-size: 1.15rem;
-    line-height: 1.7;
+    color: $primary;
+  }
+  ul{
+    padding-left: 2rem;
   }
 }
 
 .main-menu ul li a {
   text-transform: uppercase;
-  letter-spacing: 1px;
   font-family: $font-family-heading;
+  color: $white !important;
 }
 
+
 .about-content,
-.training-content {
+.training-content,
+.program-content,
+.tiers-content,
+.faq-content,
+.curriculum-content{
+
   p,
   li {
-    font-size: 1.15rem;
-    line-height: 1.7;
     color: $primary;
   }
 
   ul {
     padding-left: 2rem;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    th {
+      font-weight: 600;
+      background-color: $white-offset;
+      color: $primary-dark;
+      border: 1px solid $border-color;
+      text-align: left;
+    }
+    td {
+      border: 1px solid $border-color;
+      font-size: 1rem;
+      padding: 0.75rem;
+      color: $primary;
+    }
+
   }
 }

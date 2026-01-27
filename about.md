@@ -10,8 +10,6 @@ bodyClass: page-about
 SphereQuant is the quantitative research and trading division of Hemisphere Research Capital.
 
 We focus on building institutional-grade research infrastructure and systematic trading systems for futures, commodities, and energy markets. Our work sits at the intersection of market microstructure, data engineering, and disciplined portfolio construction.
-
-We are not a signal provider. We do not sell strategies. We build systems.
 <br>
 
 ---
