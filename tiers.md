@@ -17,7 +17,7 @@ All tiers provide access to the full technical curriculum and core research infr
 ### Tier Comparison
 
 | Feature | Core | Pro | Mentor |
-| :--- | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: |
 | **Price** | **₹40k** + GST | **₹75k** + GST | **₹1.25L** + GST |
 | **Best For** | Serious practitioners | Active traders & PMs | Institutional researchers |
 | | | | |
