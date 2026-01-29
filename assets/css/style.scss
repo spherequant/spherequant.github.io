@@ -3,6 +3,7 @@
 
 // Custom fonts must be imported first
 @import "base/custom-fonts";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 // =======================
 // Color System
@@ -31,7 +32,7 @@ $link-hover-decoration: none;
 $font-family-base: 'Space Grotesk', sans-serif;
 //$font-family-heading: 'TestSohneMono-Buch',sans-serif;
 //$font-family-heading: 'Carbon Plus' ;
-$font-family-heading: 'CarbonRegular' ;
+$font-family-heading: 'CarbonRegular', monospace;
 // Footer
 $footer-background-color: $primary-dark;
 $footer-text-color: $white-offset;

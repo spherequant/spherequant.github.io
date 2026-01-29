@@ -13,7 +13,12 @@ The program is offered in three participation tiers to accommodate different lev
 
 All tiers provide access to the full technical curriculum and core research infrastructure.
 
+<div class="text-center my-5">
+  <a href="https://forms.gle/Gj73Ys6A6PNFjpWw6" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Apply for Next Cohort →</a>
+</div>
+
 ---
+
 ### Tier Comparison
 
 | Feature | Core | Pro | Mentor |
