@@ -86,6 +86,6 @@ We work best with practitioners who:
 
 For collaboration or research inquiries, please contact:
 
-**contact@spherequant.com**
+**sphere.futures25@gmail.com**
 
 </div>

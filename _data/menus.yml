@@ -8,6 +8,9 @@ main:
   - name: "Contact"
     url: "/contact/"
     weight: 5
+  - name: "Consulting"
+    url: "/consulting/"
+    weight: 6
   - name: "Training"
     url: "/training/"
     weight: 7

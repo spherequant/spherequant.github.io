@@ -17,6 +17,15 @@ This is not a signal program.
 
 **This is research systems training.**
 
+
+Detailed curriculum, participation tiers, and cohort information:
+
+- **[Apply for Next Cohort](https://forms.gle/Gj73Ys6A6PNFjpWw6)**
+- [View Curriculum](/curriculum/)
+- [View Participation & Pricing Tiers](/tiers/)
+- [Frequently Asked Questions](/faq/)
+
+
 ---
 
 ## Flagship Program
@@ -235,16 +244,10 @@ Admission is based on:
 
 We explicitly avoid admitting participants for whom this program would not be appropriate.
 
-Detailed curriculum, participation tiers, and cohort information:
-
-- [View Curriculum →](/curriculum/)
-- [View Participation & Pricing Tiers →](/tiers/)
-- [Frequently Asked Questions →](/faq/)
-
 ---
 
 For training, institutional, or collaboration inquiries:
 
-**contact@spherequant.com**
+**sphere.futures25@gmail.com**
 
 </div>

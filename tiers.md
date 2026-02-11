@@ -54,6 +54,10 @@ All tiers provide access to the full technical curriculum and core research infr
 | **Data & Institutional Resources** | | | |
 | &nbsp;&nbsp; Standard NSE Data & Adjustment Pipelines | ✓ | ✓ | ✓ |
 | &nbsp;&nbsp; Premium Institutional Data | Optional Add-On | Optional Add-On | Included |
+| | | | |
+| **Specialized Tools & Infra** | | | |
+| &nbsp;&nbsp; Early access to EarningsQ and SphereQuant features | — | ✓ | ✓ |
+| &nbsp;&nbsp; Community resources, dashboards, automation tools and infrastructure access | — | ✓ | ✓ |
 
 
 <br>
@@ -102,6 +106,6 @@ The program is designed for practitioners with real capital, real responsibility
 
 For participation inquiries:
 
-**contact@spherequant.com**
+**sphere.futures25@gmail.com**
 
 </div>

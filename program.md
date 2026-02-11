@@ -239,4 +239,4 @@ Detailed curriculum, cohort dates, participation tiers, and application informat
 
 For institutional or collaboration inquiries:
 
-**contact@spherequant.com**
+**sphere.futures25@gmail.com**

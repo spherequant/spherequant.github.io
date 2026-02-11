@@ -14,4 +14,4 @@ Our core domains are equities and futures markets (primarily commodities and ene
 
 SphereQuant operates as the quantitative research and trading division of Hemisphere Research Capital.
 
-We partner with a select group of asset managers, proprietary trading desks, and research institutions. For collaboration inquiries, please contact us at contact@spherequant.com.
+We partner with a select group of asset managers, proprietary trading desks, and research institutions. For collaboration inquiries, please contact us at sphere.futures25@gmail.com.

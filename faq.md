@@ -157,6 +157,6 @@ Advanced cohorts and collaborations may be offered selectively.
 
 For further questions:
 
-**contact@spherequant.com**
+**sphere.futures25@gmail.com**
 
 </div>
