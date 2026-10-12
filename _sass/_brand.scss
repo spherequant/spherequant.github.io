@@ -1,11 +1,9 @@
 // _sass/_brand.scss
 // -----------------------------------------------------------------------------
 // SphereQuant brand — Anthropic black with a Bloomberg-terminal amber accent.
-// Type: Anthropic pairs Tiempos (serif headlines) with Styrene (sans body);
-// both are commercial, so we use the closest free proxies:
-//   Tiempos  -> Source Serif 4
-//   Styrene  -> Inter
-// Mono: IBM Plex Mono · Logo wordmark: IBM Plex Sans
+// Type: Bloomberg Prop Unicode K ('Berg') everywhere, taken from the viewer's
+// installed fonts (file not in repo); falls back to IBM Plex Sans.
+// Berg has a single weight, so headings rely on size rather than weight.
 // -----------------------------------------------------------------------------
 
 // Sass copies for legacy components that need real colours at compile time.
@@ -41,10 +39,12 @@ $eq-light-blue: #FB8B1E;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 
   // Type
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
-  --font-logo: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+  // Berg where installed, IBM Plex Sans (Google Fonts) everywhere else
+  --font-berg: 'Berg', 'IBM Plex Sans', system-ui, sans-serif;
+  --font-sans: var(--font-berg);
+  --font-serif: var(--font-berg);
+  --font-mono: var(--font-berg);
+  --font-logo: var(--font-berg);
 
   --radius: 8px;
   --measure: 720px;

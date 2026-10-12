@@ -1,1 +1,9 @@
-// Self-hosted fonts were removed; web fonts load from Google Fonts in _layouts/default.html.
+// Bloomberg Prop Unicode K, used only where it is installed on the viewer's
+// machine. The font file is licensed and deliberately not part of this repo.
+@font-face {
+  font-family: 'Berg';
+  src: local('Bloomberg Prop Unicode K'), local('BloombergPropUnicodeK-Book'), local('Bloomberg Prop Unicode K Book');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

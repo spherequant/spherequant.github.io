@@ -9,3 +9,7 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .DS_Store
+
+# Licensed fonts are installed locally, never committed
+*.otf
+assets/fonts/
