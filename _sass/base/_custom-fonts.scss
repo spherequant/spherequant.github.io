@@ -1,28 +1,36 @@
-// Hack (MIT / Bitstream Vera licence) — sitewide font.
+// Bergoom by Dmitry Chestnykh (SIL OFL 1.1, see assets/fonts/Bergoom-LICENSE.md)
+// https://github.com/dchest/bergoom — open-source font inspired by Bloomberg Prop.
 @font-face {
-  font-family: 'Hack';
-  src: url('../fonts/Hack-Regular.ttf') format('truetype');
+  font-family: 'Bergoom';
+  src: url('../fonts/Bergoom-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Hack';
-  src: url('../fonts/Hack-Bold.ttf') format('truetype');
+  font-family: 'Bergoom';
+  src: url('../fonts/Bergoom-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bergoom';
+  src: url('../fonts/Bergoom-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Hack';
-  src: url('../fonts/Hack-Italic.ttf') format('truetype');
+  font-family: 'Bergoom';
+  src: url('../fonts/Bergoom-Italic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Hack';
-  src: url('../fonts/Hack-BoldItalic.ttf') format('truetype');
+  font-family: 'Bergoom';
+  src: url('../fonts/Bergoom-BoldItalic.woff2') format('woff2');
   font-weight: 700;
   font-style: italic;
   font-display: swap;

@@ -1,7 +1,7 @@
 // _sass/_brand.scss
 // -----------------------------------------------------------------------------
 // SphereQuant brand — Anthropic black with a Bloomberg-terminal amber accent.
-// Type: Hack (monospace) everywhere, tracked 17% tighter via --tracking.
+// Type: Bergoom (open-source, Bloomberg Prop-inspired) everywhere.
 // -----------------------------------------------------------------------------
 
 // Sass copies for legacy components that need real colours at compile time.
@@ -37,13 +37,12 @@ $eq-light-blue: #FB8B1E;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 
   // Type
-  --font-hack: 'Hack', ui-monospace, Consolas, monospace;
-  --font-sans: var(--font-hack);
-  --font-serif: var(--font-hack);
-  --font-mono: var(--font-hack);
-  --font-logo: var(--font-hack);
-  // Hack's advance is ~0.6em; -0.1em tightens letter spacing by ~17%
-  --tracking: -0.1em;
+  --font-bergoom: 'Bergoom', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: var(--font-bergoom);
+  --font-serif: var(--font-bergoom);
+  --font-mono: var(--font-bergoom);
+  --font-logo: var(--font-bergoom);
+  --tracking: -0.01em;
 
   --radius: 8px;
   --measure: 720px;
