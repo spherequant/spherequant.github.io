@@ -18,7 +18,6 @@ body {
   font-size: 17px;
   line-height: 1.6;
   letter-spacing: -0.005em;
-  font-feature-settings: "cv11", "ss01";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -38,12 +37,12 @@ p { text-wrap: pretty; }
 a {
   color: var(--fg);
   text-decoration: underline;
-  text-decoration-color: var(--border);
+  text-decoration-color: color-mix(in srgb, var(--amber) 55%, transparent);
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   transition: text-decoration-color 0.15s ease, color 0.15s ease;
   &:visited { color: var(--fg); }
-  &:hover { color: var(--fg); text-decoration-color: var(--fg); }
+  &:hover { color: var(--amber); text-decoration-color: var(--amber); }
 }
 
 code, pre, kbd { font-family: var(--font-mono); font-size: 0.9em; }
@@ -60,13 +59,15 @@ hr {
   margin: 3rem 0;
 }
 
-::selection { background: var(--accent-bg); color: var(--fg); }
+::selection { background: var(--amber); color: var(--primary-fg); }
 
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 img { max-width: 100%; height: auto; }
 
-.wrapper { min-height: calc(100vh - 120px); }
+// Legacy _page.scss sets flex: 1 0 0 on the wrapper, which caps its height
+// and lets long pages run under the footer. Let it grow with its content.
+.page .wrapper { flex: 1 0 auto; min-height: 0; }
 
 .container, .content {
   width: 100%;
@@ -131,7 +132,7 @@ img { max-width: 100%; height: auto; }
     }
     > li.active > a {
       font-weight: 500;
-      color: var(--fg);
+      color: var(--amber);
       &:hover { background: var(--row-hover); }
     }
   }
@@ -189,7 +190,8 @@ img { max-width: 100%; height: auto; }
   color: var(--primary-fg);
   &:visited { color: var(--primary-fg); }
   &:hover {
-    background: color-mix(in srgb, var(--primary) 85%, var(--bg));
+    background: var(--amber-hover);
+    border-color: var(--amber-hover);
     color: var(--primary-fg);
   }
 }
@@ -211,7 +213,7 @@ img { max-width: 100%; height: auto; }
     font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--amber);
     margin-bottom: 1.5rem;
   }
 
@@ -246,7 +248,7 @@ img { max-width: 100%; height: auto; }
     font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--amber);
     margin: 0 0 1rem;
   }
   > h2 {
@@ -294,7 +296,7 @@ img { max-width: 100%; height: auto; }
     line-height: 1.6;
     margin: 0;
   }
-  &:hover { border-color: var(--border); }
+  &:hover { border-color: color-mix(in srgb, var(--amber) 60%, var(--border-subtle)); }
 
   a.card-link::after {
     content: '';
@@ -379,7 +381,7 @@ img { max-width: 100%; height: auto; }
   blockquote {
     margin: 2rem 0;
     padding: 0.25rem 0 0.25rem 1.25rem;
-    border-left: 2px solid var(--fg);
+    border-left: 2px solid var(--amber);
     font-family: var(--font-serif);
     font-size: 1.25rem;
     color: var(--muted);
@@ -421,6 +423,16 @@ img { max-width: 100%; height: auto; }
   }
 
   .card-grid { margin: 2rem 0; }
+
+  h2 { padding-top: 0.25rem; }
+  > h2::before, .faq-content > h2::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--amber);
+    margin-bottom: 1rem;
+  }
 }
 
 // =======================
@@ -520,6 +532,9 @@ img { max-width: 100%; height: auto; }
 // Footer
 // =======================
 .sub-footer {
+  position: relative;
+  clear: both;
+  font-family: var(--font-sans) !important;
   margin-top: 6rem;
   padding: 2.5rem 0;
   background: transparent;
@@ -534,7 +549,7 @@ img { max-width: 100%; height: auto; }
     gap: 1rem;
   }
   .footer-brand {
-    font-family: var(--font-serif);
+    font-family: var(--font-serif) !important;
     font-size: 1.1rem;
     color: var(--fg);
   }
@@ -545,7 +560,7 @@ img { max-width: 100%; height: auto; }
     list-style: none;
     margin: 0;
     padding: 0;
-    a { color: var(--muted); text-decoration: none; font-size: 14px; &:hover { color: var(--fg); } }
+    a { color: var(--muted); text-decoration: none; font-size: 14px; &:hover { color: var(--amber); } }
   }
   .footer-legal {
     width: 100%;
