@@ -1,8 +1,9 @@
-// Bloomberg Prop Unicode K, used only where it is installed on the viewer's
-// machine. The font file is licensed and deliberately not part of this repo.
+// Bloomberg Prop Unicode K (licensed). Single weight: Book.
+// Uses the installed copy if present, otherwise the bundled file.
 @font-face {
   font-family: 'Berg';
-  src: local('Bloomberg Prop Unicode K'), local('BloombergPropUnicodeK-Book'), local('Bloomberg Prop Unicode K Book');
+  src: local('Bloomberg Prop Unicode K'), local('BloombergPropUnicodeK-Book'),
+       url('../fonts/berg.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

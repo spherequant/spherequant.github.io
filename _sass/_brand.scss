@@ -1,8 +1,8 @@
 // _sass/_brand.scss
 // -----------------------------------------------------------------------------
 // SphereQuant brand — Anthropic black with a Bloomberg-terminal amber accent.
-// Type: Bloomberg Prop Unicode K ('Berg') everywhere, taken from the viewer's
-// installed fonts (file not in repo); falls back to IBM Plex Sans.
+// Type: Bloomberg Prop Unicode K ('Berg') everywhere, served from
+// assets/fonts/berg.otf; falls back to IBM Plex Sans while loading.
 // Berg has a single weight, so headings rely on size rather than weight.
 // -----------------------------------------------------------------------------
 
@@ -39,7 +39,7 @@ $eq-light-blue: #FB8B1E;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 
   // Type
-  // Berg where installed, IBM Plex Sans (Google Fonts) everywhere else
+  // Berg everywhere; IBM Plex Sans only as a loading fallback
   --font-berg: 'Berg', 'IBM Plex Sans', system-ui, sans-serif;
   --font-sans: var(--font-berg);
   --font-serif: var(--font-berg);
