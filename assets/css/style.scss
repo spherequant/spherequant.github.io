@@ -2,7 +2,6 @@
 ---
 
 @import "base/custom-fonts";
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
 // =======================
 // Brand (EarningsQ tokens)
@@ -27,7 +26,7 @@ $link-decoration: none;
 $link-hover-color: $accent;
 $link-hover-decoration: underline;
 
-$font-family-sans-serif: 'Berg', 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-family-sans-serif: 'Bergoom', system-ui, sans-serif;
 $font-family-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
 $font-family-monospace: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
 $font-family-base: $font-family-sans-serif;
