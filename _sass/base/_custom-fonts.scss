@@ -1,10 +1,29 @@
-// Bloomberg Prop Unicode K (licensed). Single weight: Book.
-// Uses the installed copy if present, otherwise the bundled file.
+// Hack (MIT / Bitstream Vera licence) — sitewide font.
 @font-face {
-  font-family: 'Berg';
-  src: local('Bloomberg Prop Unicode K'), local('BloombergPropUnicodeK-Book'),
-       url('../fonts/berg.otf') format('opentype');
+  font-family: 'Hack';
+  src: url('../fonts/Hack-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hack';
+  src: url('../fonts/Hack-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hack';
+  src: url('../fonts/Hack-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hack';
+  src: url('../fonts/Hack-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
   font-display: swap;
 }
