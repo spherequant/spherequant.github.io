@@ -1,4 +1,7 @@
-name: Deploy site to GitHub Pages
+name: Build and publish to gh-pages
+
+# Builds the Jekyll site from main and pushes the result to the gh-pages
+# branch, which GitHub Pages already serves. No Pages settings change needed.
 
 on:
   push:
@@ -6,16 +9,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,20 +24,12 @@ jobs:
         with:
           ruby-version: '3.2'
       - run: bundle lock --add-platform x86_64-linux && bundle install
-      - uses: actions/configure-pages@v5
       - run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
-      - uses: actions/upload-pages-artifact@v3
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          path: _site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./_site
+          commit_message: "Deploy ${{ github.sha }}"
