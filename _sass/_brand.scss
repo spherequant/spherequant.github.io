@@ -1,43 +1,46 @@
 // _sass/_brand.scss
 // -----------------------------------------------------------------------------
-// SphereQuant brand — colours mirror the EarningsQ design tokens
-// (qresearch/epad/src/styles/tokens.css). Layout and type follow an
-// Anthropic-style editorial look: serif headlines, sans body, lots of air.
+// SphereQuant brand — Anthropic black with a Bloomberg-terminal amber accent.
+// Type: Anthropic pairs Tiempos (serif headlines) with Styrene (sans body);
+// both are commercial, so we use the closest free proxies:
+//   Tiempos  -> Source Serif 4
+//   Styrene  -> DM Sans
 // -----------------------------------------------------------------------------
 
-// Sass copies of the light palette, for legacy components that need real colours.
-$eq-light-foreground: #14161A;
-$eq-light-muted: #474E57;
-$eq-light-border-subtle: #D9DDE2;
-$eq-light-blue: #0068C9;
+// Sass copies for legacy components that need real colours at compile time.
+$eq-light-foreground: #F0EEE6;
+$eq-light-muted: #A6A39A;
+$eq-light-border-subtle: #2A2927;
+$eq-light-blue: #FB8B1E;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  // Neutrals — EarningsQ light
-  --bg: #F2F3F5;
-  --fg: #14161A;
-  --card: #FFFFFF;
-  --surface-raised: #F0F1F3;
-  --surface-sunken: #F7F8F9;
-  --muted: #474E57;
-  --border: #848B95;
-  --border-subtle: #D9DDE2;
-  --accent-bg: #DCE0E5;
-  --row-hover: #EEF0F2;
+  // Neutrals — Anthropic black and warm ivory text
+  --bg: #141413;
+  --fg: #F0EEE6;
+  --card: #1C1C1A;
+  --surface-raised: #222220;
+  --surface-sunken: #0F0F0E;
+  --muted: #A6A39A;
+  --border: #4A4843;
+  --border-subtle: #2A2927;
+  --accent-bg: #3A2A12;
+  --row-hover: #1F1F1D;
 
-  // Actions are neutral; brand blue/red are signal colours
-  --primary: #14161A;
-  --primary-fg: #FFFFFF;
-  --blue: #0068C9;
-  --red: #C8303A;
-  --amber: #9A6500;
+  // Bloomberg amber drives actions and highlights
+  --amber: #FB8B1E;
+  --amber-hover: #FFA54A;
+  --primary: var(--amber);
+  --primary-fg: #141413;
+  --blue: #FB8B1E;
+  --red: #FF6B70;
 
-  --logo-filter: invert(1);
-  --shadow: 0 1px 3px rgba(20, 22, 26, 0.08);
+  --logo-filter: none;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 
   // Type
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
 
@@ -45,33 +48,3 @@ $eq-light-blue: #0068C9;
   --measure: 720px;
   --wide: 1120px;
 }
-
-@mixin eq-dark {
-  color-scheme: dark;
-
-  // Neutrals — EarningsQ dark, warm charcoal
-  --bg: #201E1D;
-  --fg: #ECE9E6;
-  --card: #252322;
-  --surface-raised: #2B2927;
-  --surface-sunken: #1C1A19;
-  --muted: #B5AFA9;
-  --border: #7A736D;
-  --border-subtle: #3A3633;
-  --accent-bg: #4A4644;
-  --row-hover: #302D2B;
-
-  --primary: #ECE9E6;
-  --primary-fg: #201E1D;
-  --blue: #2EA8FF;
-  --red: #FF6B70;
-  --amber: #FFB020;
-
-  --logo-filter: none;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { @include eq-dark; }
-}
-:root[data-theme="dark"] { @include eq-dark; }
