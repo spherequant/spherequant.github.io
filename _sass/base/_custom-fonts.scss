@@ -1,1 +1,10 @@
-// Self-hosted fonts were removed; web fonts load from Google Fonts in _layouts/default.html.
+// Bloomberg Prop Unicode K (licensed). Single weight: Book.
+// Uses the installed copy if present, otherwise the bundled file.
+@font-face {
+  font-family: 'Berg';
+  src: local('Bloomberg Prop Unicode K'), local('BloombergPropUnicodeK-Book'),
+       url('../fonts/berg.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
