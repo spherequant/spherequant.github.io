@@ -1,9 +1,7 @@
 // _sass/_brand.scss
 // -----------------------------------------------------------------------------
 // SphereQuant brand — Anthropic black with a Bloomberg-terminal amber accent.
-// Type: Bloomberg Prop Unicode K ('Berg') everywhere, served from
-// assets/fonts/berg.otf; falls back to IBM Plex Sans while loading.
-// Berg has a single weight, so headings rely on size rather than weight.
+// Type: Hack (monospace) everywhere, tracked 17% tighter via --tracking.
 // -----------------------------------------------------------------------------
 
 // Sass copies for legacy components that need real colours at compile time.
@@ -39,12 +37,13 @@ $eq-light-blue: #FB8B1E;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 
   // Type
-  // Berg everywhere; IBM Plex Sans only as a loading fallback
-  --font-berg: 'Berg', 'IBM Plex Sans', system-ui, sans-serif;
-  --font-sans: var(--font-berg);
-  --font-serif: var(--font-berg);
-  --font-mono: var(--font-berg);
-  --font-logo: var(--font-berg);
+  --font-hack: 'Hack', ui-monospace, Consolas, monospace;
+  --font-sans: var(--font-hack);
+  --font-serif: var(--font-hack);
+  --font-mono: var(--font-hack);
+  --font-logo: var(--font-hack);
+  // Hack's advance is ~0.6em; -0.1em tightens letter spacing by ~17%
+  --tracking: -0.1em;
 
   --radius: 8px;
   --measure: 720px;
