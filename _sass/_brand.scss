@@ -1,0 +1,77 @@
+// _sass/_brand.scss
+// -----------------------------------------------------------------------------
+// SphereQuant brand — colours mirror the EarningsQ design tokens
+// (qresearch/epad/src/styles/tokens.css). Layout and type follow an
+// Anthropic-style editorial look: serif headlines, sans body, lots of air.
+// -----------------------------------------------------------------------------
+
+// Sass copies of the light palette, for legacy components that need real colours.
+$eq-light-foreground: #14161A;
+$eq-light-muted: #474E57;
+$eq-light-border-subtle: #D9DDE2;
+$eq-light-blue: #0068C9;
+
+:root {
+  color-scheme: light;
+
+  // Neutrals — EarningsQ light
+  --bg: #F2F3F5;
+  --fg: #14161A;
+  --card: #FFFFFF;
+  --surface-raised: #F0F1F3;
+  --surface-sunken: #F7F8F9;
+  --muted: #474E57;
+  --border: #848B95;
+  --border-subtle: #D9DDE2;
+  --accent-bg: #DCE0E5;
+  --row-hover: #EEF0F2;
+
+  // Actions are neutral; brand blue/red are signal colours
+  --primary: #14161A;
+  --primary-fg: #FFFFFF;
+  --blue: #0068C9;
+  --red: #C8303A;
+  --amber: #9A6500;
+
+  --logo-filter: invert(1);
+  --shadow: 0 1px 3px rgba(20, 22, 26, 0.08);
+
+  // Type
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  --radius: 8px;
+  --measure: 720px;
+  --wide: 1120px;
+}
+
+@mixin eq-dark {
+  color-scheme: dark;
+
+  // Neutrals — EarningsQ dark, warm charcoal
+  --bg: #201E1D;
+  --fg: #ECE9E6;
+  --card: #252322;
+  --surface-raised: #2B2927;
+  --surface-sunken: #1C1A19;
+  --muted: #B5AFA9;
+  --border: #7A736D;
+  --border-subtle: #3A3633;
+  --accent-bg: #4A4644;
+  --row-hover: #302D2B;
+
+  --primary: #ECE9E6;
+  --primary-fg: #201E1D;
+  --blue: #2EA8FF;
+  --red: #FF6B70;
+  --amber: #FFB020;
+
+  --logo-filter: none;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include eq-dark; }
+}
+:root[data-theme="dark"] { @include eq-dark; }
