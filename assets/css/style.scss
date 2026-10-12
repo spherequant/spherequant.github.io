@@ -1,40 +1,38 @@
 ---
 ---
 
-// Custom fonts must be imported first
 @import "base/custom-fonts";
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 // =======================
-// Color System
+// Brand (EarningsQ tokens)
 // =======================
+// Sass values are only used by the legacy theme components at compile time.
+// Runtime colours come from the CSS custom properties in _brand.scss.
+@import "brand";
 
-// Institutional Slate Palette
-$primary: #334155;       // Slate 700 - Body Text
-$primary-dark: #002D04;  // Slate 900 - Headings / Header / Footer
-$secondary: #64748b;     // Slate 500 - Muted Text
-$black: #020617;         // Slate 950
-$white: #ffffff;         // Update this if the content cards need a specific color
-$white-offset: #FDFBF7;  // REPLACE THIS with the hex code from your image
-$steel: #94a3b8;         // Slate 400
-$border-color: #e2e8f0;  // Slate 200
-$accent: #0369a1;        // Sky 700 - Links/Actions
+$primary: $eq-light-foreground;
+$primary-dark: $eq-light-foreground;
+$secondary: $eq-light-muted;
+$black: $eq-light-foreground;
+$white: #FFFFFF;
+$white-offset: $eq-light-border-subtle;
+$steel: $eq-light-muted;
+$border-color: $eq-light-border-subtle;
+$accent: $eq-light-blue;
+$border-radius: 8px;
 
-// Links
 $link-color: $accent;
 $link-decoration: none;
-$link-hover-color: $primary-dark;
-$link-hover-decoration: none;
+$link-hover-color: $accent;
+$link-hover-decoration: underline;
 
-// Fonts
-//$font-family-base:'TestSohneMono-Buch',sans-serif;
-//$font-family-base: 'TestSohne-Buch', sans-serif;
-//$font-family-base: 'Space Grotesk', sans-serif;
-$font-family-base: 'Inter', sans-serif;
-//$font-family-heading: 'TestSohneMono-Buch',sans-serif;
-//$font-family-heading: 'Carbon Plus' ;
-$font-family-heading: 'CarbonRegular', monospace;
-// Footer
+$font-family-sans-serif: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-family-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+$font-family-monospace: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+$font-family-base: $font-family-sans-serif;
+$font-family-heading: $font-family-serif;
+
 $footer-background-color: $primary-dark;
 $footer-text-color: $white-offset;
 $sub-footer-background-color: $black;
@@ -91,6 +89,7 @@ $grid-breakpoints: (
 @import "components/strip";
 @import "components/feature";
 @import "components/social";
+// @import "components/faq"; // Inlined below to ensure loading
 
 // =======================
 // Pages
@@ -100,121 +99,4 @@ $grid-breakpoints: (
 @import "pages/page-teams";
 @import "pages/page-service";
 
-// =======================
-// Base Styles
-// =======================
-
-body {
-  font-size: 16px;
-  line-height: 1.2;
-  font-family: $font-family-base;
-  color: $primary;
-  background-color: $white-offset;
-  margin: 0;
-  padding: 0;
-}
-
-/* Tablet and up */
-@media (min-width: 768px) {
-  body {
-    font-size: 16px;
-    line-height: 1.3;
-  }
-}
-
-.sub-footer{
-  background-color: $sub-footer-background-color;
-}
-
-.header {
-  display: block;
-  background-color: $primary-dark;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  margin: 0;
-}
-
-.main {
-  padding: 0;
-}
-
-.container, .content {
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0rem;
-  padding-right: 0rem;
-}
-
-.professional-intro {
-  background-color: $white-offset;
-  color: $primary;
-  padding: 6rem 0 8rem 0;
-
-  h1 {
-    font-size: 2.4rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    color: $primary-dark;
-    //text-transform: uppercase;
-  }
-
-  h2,h3,h4,h5,h6
-  {
-    font-family: $font-family-heading;
-    font-weight: 500;
-    //text-transform: uppercase;
-  }
-
-  p {
-    color: $primary;
-  }
-  ul{
-    padding-left: 2rem;
-  }
-}
-
-.main-menu ul li a {
-  text-transform: uppercase;
-  font-family: $font-family-heading;
-  color: $white !important;
-}
-
-
-.about-content,
-.training-content,
-.program-content,
-.tiers-content,
-.faq-content,
-.curriculum-content{
-
-  p,
-  li {
-    color: $primary;
-  }
-
-  ul {
-    padding-left: 2rem;
-  }
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 1.5rem 0;
-    th {
-      font-weight: 600;
-      background-color: $white-offset;
-      color: $primary-dark;
-      border: 1px solid $border-color;
-      text-align: left;
-    }
-    td {
-      border: 1px solid $border-color;
-      font-size: 1rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      color: $primary;
-    }
-
-  }
-
-}
+@import "site";

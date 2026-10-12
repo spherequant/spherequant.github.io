@@ -1,0 +1,106 @@
+// _sass/components/_faq.scss
+
+// Styles for the FAQ accordion, moved from faq.md
+
+.faq-page-container {
+  // background-color, color, font-family are now global.
+  // We keep padding here to maintain page structure.
+  padding: 2rem 1rem;
+  line-height: 1.6;
+}
+
+.faq-content {
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: $brand-text-headings;
+  }
+}
+
+.faq-item {
+  border-bottom: 1px solid $brand-border;
+
+  &:first-of-type {
+    border-top: 1px solid $brand-border;
+  }
+
+  summary {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    position: relative;
+    list-style: none;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $brand-card-bg;
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: '+';
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: $brand-text-secondary;
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  &[open] > summary::after {
+    content: '−';
+    transform: translateY(-50%);
+  }
+}
+
+.faq-answer {
+  padding: 0 1rem 1.5rem 1rem;
+  border-left: 3px solid $brand-accent;
+  margin: 0 1rem 1.5rem 1rem;
+  padding-left: 1.5rem;
+
+  p, ul {
+    margin: 0.5rem 0;
+  }
+
+  ul {
+    padding-left: 1.2rem;
+  }
+
+  li {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.faq-contact {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1rem;
+  color: $brand-text-primary; // Brighter text for visibility
+  padding: 2rem;
+  border-top: 1px solid $brand-border; // Separation from questions
+
+  a {
+    color: $brand-accent;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+
+    &:hover {
+      text-decoration: underline;
+      color: $brand-accent-hover;
+    }
+  }
+}

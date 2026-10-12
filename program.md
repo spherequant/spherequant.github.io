@@ -61,51 +61,32 @@ This program is **not suitable** for:
 
 Every participant builds a complete end-to-end research and portfolio system.
 
-Core deliverables include:
-
-### Research Infrastructure
-
-- A structured Python research repository  
-- Version-controlled workflows with Git  
-- Clean environment and dependency management  
-- Modular research and strategy framework  
-
-### Data & Adjustment Pipelines
-
-- Market data ingestion and normalization  
-- Corporate action handling and price adjustment  
-- Contract roll and futures specifications  
-- Survivorship-aware datasets  
-
-### Backtesting & Strategy Systems
-
-- Single-instrument backtesting engine  
-- Multi-instrument and universe backtests  
-- Parameter sweeps and optimization frameworks  
-- Benchmarking and comparative analysis  
-- Tear sheets and performance diagnostics  
-
-### Statistical Research Tools
-
-- Event-driven hypothesis testing framework  
-- Conditional return analysis  
-- Distribution and regime studies  
-- Correlation and dependency analysis  
-- Edge decay and robustness testing  
-
-### Portfolio Systems
-
-- Portfolio construction logic  
-- Rebalancing frameworks  
-- Drawdown and risk analytics  
-- Portfolio-level performance dashboards  
-
-### Research & Monitoring Dashboards
-
-- Grafana-based research dashboards  
-- Strategy and portfolio monitors  
-- Custom indicators and visual analytics  
-- Daily research and monitoring workflows  
+<div class="card-grid" style="margin-top: 2rem;">
+  <div class="card">
+    <h3>Research Infrastructure</h3>
+    <p>A structured Python repository with version control, clean environments, and a modular framework for strategy development.</p>
+  </div>
+  <div class="card">
+    <h3>Data & Adjustment Pipelines</h3>
+    <p>Pipelines for market data ingestion, corporate action adjustments, futures contract rolling, and survivorship-aware datasets.</p>
+  </div>
+  <div class="card">
+    <h3>Backtesting & Strategy Systems</h3>
+    <p>A robust engine for single-instrument and universe backtests, parameter sweeps, and performance diagnostics.</p>
+  </div>
+  <div class="card">
+    <h3>Statistical Research Tools</h3>
+    <p>Frameworks for event studies, conditional return analysis, distribution studies, and edge decay testing.</p>
+  </div>
+  <div class="card">
+    <h3>Portfolio Systems</h3>
+    <p>Logic for portfolio construction, rebalancing, risk analytics, and performance monitoring at the portfolio level.</p>
+  </div>
+  <div class="card">
+    <h3>Research & Monitoring Dashboards</h3>
+    <p>Grafana-based dashboards for research, strategy monitoring, and custom visual analytics in your daily workflow.</p>
+  </div>
+</div>
 
 ---
 
