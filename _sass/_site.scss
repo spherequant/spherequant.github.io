@@ -105,6 +105,18 @@ img { max-width: 100%; height: auto; }
   }
 }
 
+.wordmark {
+  font-family: var(--font-logo);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--fg);
+  text-decoration: none;
+  &:visited { color: var(--fg); }
+  &:hover { color: var(--amber); text-decoration: none; }
+}
+
 .logo img, .logo-mobile img {
   filter: var(--logo-filter);
   height: 22px;

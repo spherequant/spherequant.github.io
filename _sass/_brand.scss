@@ -5,7 +5,7 @@
 // both are commercial, so we use the closest free proxies:
 //   Tiempos  -> Source Serif 4
 //   Styrene  -> Inter
-// Mono: IBM Plex Mono
+// Mono: IBM Plex Mono · Logo wordmark: IBM Plex Sans
 // -----------------------------------------------------------------------------
 
 // Sass copies for legacy components that need real colours at compile time.
@@ -44,6 +44,7 @@ $eq-light-blue: #FB8B1E;
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  --font-logo: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
 
   --radius: 8px;
   --measure: 720px;
