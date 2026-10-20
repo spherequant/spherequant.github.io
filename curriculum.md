@@ -1,160 +1,148 @@
 ---
 layout: page
-title: Curriculum
+title: QUARK Curriculum
 permalink: /curriculum/
-class: curriculum-content
+description: "Week-by-week curriculum for QUARK Cohort 2, 1 December 2026 – 15 January 2027."
 ---
 
 <div class="curriculum-content" markdown="1">
 
-## Curriculum Overview
+**Cohort 2 runs from 1 December 2026 to 15 January 2027.** Week 1 sets up your research desk. From week 2 you use it.
 
-The program is structured as an eight-week build of a complete quantitative research and portfolio system.
-
-Each week produces a concrete system component that remains part of the participant’s final research stack.
+Each week has one recorded lesson (under 90 minutes), one live Saturday session, office hours, and one thing you ship.
 
 ---
 
-## Week 0 — Research Environment & Infrastructure
+## Pre-work · 20–30 November
 
-**Objective:** Establish a professional research environment used throughout the program.
+**Get ready before day one.**
 
-**Outcomes:**
-
-- Clean Python research repository  
-- Git-based workflow and version control  
-- PostgreSQL research database  
-- Grafana research dashboard  
-- Market data ingestion pipeline  
+- Check your computer meets the requirements (see [FAQ](/faq/)).
+- Install the tools: database, Python, Git, and the AI analyst (OpenCode).
+- Start downloading the intraday data packs from Google Drive. They're released from 20 November.
+- Optional setup clinic: Saturday 28 November.
 
 ---
 
-## Week 1 — AI Workflows & Research Planning
+## Week 1 · 1–6 December — Set up your desk
 
-**Objective:** Learn to use AI as a supervised research engineer.
+**Goal:** a working research desk that updates itself.
 
-**Outcomes:**
+- Create the database from the QUARK schema and load daily history.
+- Build the derived and factor layers.
+- Load the hemis_research intraday data.
+- Schedule the daily update scripts and read your first data-quality report.
+- Start the dashboard app.
+- Connect your AI analyst and tour the data with it.
 
-- Structured prompting frameworks  
-- Research planning with LLMs  
-- Project specification and revision workflows  
-- AI-assisted code generation and auditing  
-- Research design documentation  
+**Done when:** the setup checklist passes, the daily update runs on its own, the starter dashboards load, and your analyst correctly answers five starter questions.
 
----
-
-## Week 2 — Market Data & Adjustment Frameworks
-
-**Objective:** Build clean, survivorship-aware datasets.
-
-**Outcomes:**
-
-- Daily OHLCV ingestion pipelines  
-- Bhavcopy parsing and normalization  
-- Corporate action adjustment frameworks  
-- Contract specification and roll handling  
-- Auditable historical price series  
+*Live session: Saturday 5 December.*
 
 ---
 
-## Week 3 — Backtesting & Strategy Infrastructure
+## Week 2 · 7–13 December — Test your hunches
 
-**Objective:** Design robust backtesting systems.
+**Goal:** turn something you believe about the market into a tested result.
 
-**Outcomes:**
+- What each data layer is for, and which one to use when.
+- Turning trading ideas into hypotheses that can be proven wrong.
+- Event studies and conditional returns using factors.
+- **How research lies:** look-ahead bias, survivorship bias, testing too many ideas, ignoring costs — and how `/bias-audit` catches them.
 
-- Single-instrument backtesting engine  
-- Strategy abstraction layers  
-- Parameter sweeps and optimization  
-- Benchmark comparison  
-- Tear sheets and diagnostics  
+**Ship:** one idea from your own trading, tested properly, with a written verdict: keep, kill, or needs more data.
 
----
-
-## Week 4 — Statistical Research & Event Studies
-
-**Objective:** Learn to test hypotheses correctly.
-
-**Outcomes:**
-
-- Event-driven research framework  
-- Conditional return analysis  
-- Distribution and regime studies  
-- Correlation and dependency analysis  
-- Visualization of hypothesis outcomes  
+*Live session: Saturday 12 December.*
 
 ---
 
-## Week 5 — Multi-Asset & Universe Research
+## Week 3 · 14–20 December — Strategies, portfolios and intraday
 
-**Objective:** Extend research to multiple instruments.
+**Goal:** go from a single result to something you could actually trade and monitor.
 
-**Outcomes:**
+- Backtesting with realistic Indian costs: STT, exchange fees, slippage.
+- Walk-forward and out-of-sample testing.
+- Combining strategies, position sizing, drawdowns and risk.
+- Intraday studies: opening range, time-of-day patterns, expiry-day behaviour.
+- Turning a study into a live dashboard with `/add-dashboard`.
 
-- Multi-instrument backtesting  
-- Cross-sectional strategy evaluation  
-- Universe construction logic  
-- Aggregated performance analysis  
-- Strategy comparison dashboards  
+**Ship:** one backtest with an out-of-sample report and a risk view — or one intraday study — plus its dashboard.
 
----
-
-## Week 6 — Portfolio Systems & Risk Analytics
-
-**Objective:** Move from strategies to portfolios.
-
-**Outcomes:**
-
-- Portfolio construction frameworks  
-- Rebalancing logic  
-- Drawdown and risk analytics  
-- Portfolio performance dashboards  
-- Regime and concentration diagnostics  
+*Live session: Saturday 19 December.*
 
 ---
 
-## Weeks 7–10 — Capstone Project (Optional Advanced Phase)
+## Holiday window · 21 December – 3 January
 
-**Objective:** Integrate the full research stack into a coherent system.
+**Capstone at your own pace.** Pick your capstone question and work on it. Office hours on request.
 
-**Outcomes:**
-
-- End-to-end research and portfolio system  
-- Custom research project  
-- Architecture and research audit  
-- Final system review and presentation  
-
-Advanced participants may implement:
-
-- Momentum and factor portfolios  
-- Term structure strategies  
-- Regime-switching frameworks  
-- Cross-asset research systems  
+*Optional catch-up clinic: Saturday 2 January.*
 
 ---
 
-## Final Deliverables
+## Week 4 · 4–10 January — Capstone and demo day
 
-Every participant completes:
+**Goal:** one complete piece of research you'd stand behind.
 
-- A production-quality research repository  
-- Clean and adjusted market datasets  
-- Backtesting and research frameworks  
-- Portfolio construction systems  
-- Monitoring dashboards  
-- Research documentation  
+- Finish an end-to-end study of your choice.
+- Peer review in small groups, using a fixed checklist.
+- **Demo day, Saturday 9 January:** a 10-minute presentation from your own dashboards, reviewed live.
 
-These systems remain part of the participant’s permanent trading workflow.
+**Ship:** a research report your analyst can regenerate from scratch.
 
 ---
 
-This curriculum emphasizes:
+## Wrap-up · 11–15 January
 
-- Correctness  
-- Reproducibility  
-- Robustness  
-- Long-term usability  
+Final written reviews, feedback, and onboarding into the alumni community.
 
-No shortcuts. No signals. No performance claims.
+---
+
+## Two tracks, one cohort
+
+| | Practitioner track | Builder track |
+|---|---|---|
+| **For** | Traders without a coding background | Traders comfortable with code |
+| **Setup** | Guided step by step, clinic on call | Independent, helps peers |
+| **Focus** | Asking good questions, reading results critically | Extending the desk |
+| **Code** | Read it; your analyst writes it | Write and review it |
+| **Extra** | — | Add your own factor, dataset or dashboard chart |
+
+Same sessions and deliverables for both. The Builder track gets one optional extra exercise each week.
+
+---
+
+## Research playbook
+
+Studies your analyst can run from day one, each with a reference result and the traps to watch for.
+
+**Daily:**
+
+- Momentum and relative strength across index stocks
+- Sector rotation
+- Volatility regimes and what works in each
+- Futures basis and roll behaviour
+- OI build-up and unwinding: does it lead or lag price?
+- Post-results drift and IV crush around results
+
+**Intraday:**
+
+- Expiry-day behaviour of NIFTY and BANKNIFTY
+- Opening range breakouts by stock, sector and volatility
+- Gap fills: how often, how fast, and when
+- Time-of-day returns and volume patterns
+
+---
+
+## After the cohort
+
+- Your desk keeps running and stays yours.
+- Monthly live research clinics for 12 months.
+- New factors, skills and schema updates as we build them.
+- Community access for 12 months.
+
+<div class="text-center my-5">
+  <a href="https://forms.gle/Gj73Ys6A6PNFjpWw6" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Apply for Cohort 2 →</a>
+</div>
 
 </div>
