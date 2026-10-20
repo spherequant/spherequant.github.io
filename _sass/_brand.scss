@@ -40,7 +40,7 @@ $eq-light-blue: #FB8B1E;
   --font-bergoom: 'Bergoom', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-sans: var(--font-bergoom);
   --font-serif: var(--font-bergoom);
-  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+  --font-mono: 'JetBrains Mono NL', ui-monospace, Consolas, monospace;
   --font-logo: var(--font-bergoom);
   --tracking: -0.01em;
 
@@ -48,6 +48,3 @@ $eq-light-blue: #FB8B1E;
   --measure: 720px;
   --wide: 1120px;
 }
-
-// JetBrains Mono with ligatures off = JetBrains Mono NL
-code, pre, kbd, samp, [class*="mono"] { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
