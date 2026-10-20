@@ -35,3 +35,27 @@
   font-style: italic;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/JetBrainsMonoNL-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/JetBrainsMonoNL-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono NL';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/JetBrainsMonoNL-SemiBold.ttf') format('truetype');
+}
