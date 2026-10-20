@@ -1,46 +1,54 @@
 ---
 title: SphereQuant
 layout: home
-description: "Institutional-grade research infrastructure and consulting for quantitative trading. We build and teach the process-driven frameworks required for systematic investing."
+description: "SphereQuant builds research infrastructure for traders and investors. QUARK — the Quant AI Research Kit — gives you your own market research database, intraday data and an AI research analyst."
 ---
 
 <section class="professional-intro">
   <span class="eyebrow">SphereQuant · Hemisphere Research Capital</span>
-  <h1>Institutional-grade research infrastructure</h1>
-  <p>We build and teach the process-driven frameworks behind systematic quantitative research, for independent practitioners and emerging funds.</p>
+  <h1>Research infrastructure for people who trade.</h1>
+  <p>We give traders and investors the data, tools and AI analysts that professional desks use — and teach them to prove an idea before they put money behind it.</p>
   <div class="hero-actions">
-    <a href="mailto:sphere.futures25@gmail.com" class="button button-primary">Request a consultation</a>
-    <a href="{{ '/training/' | relative_url }}" class="button">Explore training</a>
+    <a href="{{ '/quark/' | relative_url }}" class="button button-primary">Meet QUARK</a>
+    <a href="{{ '/consulting/' | relative_url }}" class="button">Consulting</a>
   </div>
 </section>
 
-<section class="section">
-  <p class="section-label">What we do</p>
-  <h2>Process over hype.</h2>
-  <p>Robust research systems outlast any single strategy. We focus on the infrastructure that makes good decisions repeatable.</p>
+<section class="section feature-quark">
+  <p class="section-label">Cohort 2 · 1 Dec 2026 – 15 Jan 2027</p>
+  <h2>QUARK — Quant AI Research Kit</h2>
+  <p>Your own market research database, 200 GB of intraday data, and an AI analyst that knows every table. Set it up in week one. Research from week two.</p>
 
   <div class="card-grid">
     <div class="card">
-      <h3>Quantitative Systems</h3>
-      <p>Design, validation, and operation of institutional-grade research and portfolio infrastructure. We focus on process, not on packaged signals.</p>
+      <h3>Own your data</h3>
+      <p>A research database for stocks, futures, options and indices — raw, derived and factors — that updates itself every day.</p>
     </div>
     <div class="card">
-      <h3>Bespoke Consulting</h3>
-      <p>Direct advisory for emerging funds and independent quants on system architecture, data pipelines, and research validation frameworks.</p>
+      <h3>Ask in plain English</h3>
+      <p>An AI analyst that writes the queries, runs the tests and builds the dashboards. Free to run, no subscription.</p>
     </div>
     <div class="card">
-      <h3>First Principles</h3>
-      <p>Our methodology is built on a first-principles approach to market dynamics, emphasizing robust infrastructure over transient strategies.</p>
+      <h3>Prove it first</h3>
+      <p>A built-in bias audit catches look-ahead, survivorship and cost mistakes before a result reaches you.</p>
     </div>
   </div>
+  <p class="layers-note"><a href="{{ '/quark/' | relative_url }}">See what's inside QUARK →</a></p>
+</section>
+
+<section class="section">
+  <p class="section-label">Also from SphereQuant</p>
+  <h2>Bespoke consulting.</h2>
+  <p>Direct advisory for emerging funds and independent traders on research infrastructure, data pipelines and validation.</p>
+  <p class="layers-note"><a href="{{ '/consulting/' | relative_url }}">Consulting →</a></p>
 </section>
 
 <section class="cta-band">
   <div class="cta-inner">
     <div>
-      <h2>Build research you can trust.</h2>
-      <p>Talk to us about consulting engagements or the next training cohort.</p>
+      <h2>Your intuition, tested.</h2>
+      <p>Applications for QUARK Cohort 2 are open.</p>
     </div>
-    <a href="{{ '/contact/' | relative_url }}" class="button button-primary">Get in touch</a>
+    <a href="https://forms.gle/Gj73Ys6A6PNFjpWw6" class="button button-primary" target="_blank" rel="noopener">Apply for Cohort 2</a>
   </div>
 </section>

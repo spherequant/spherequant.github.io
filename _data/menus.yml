@@ -1,18 +1,24 @@
 main:
-  - name: "Home"
-    url: "/"
+  - name: "QUARK"
+    url: "/quark/"
+    weight: 1
+  - name: "Curriculum"
+    url: "/curriculum/"
+    weight: 2
+  - name: "Pricing"
+    url: "/pricing/"
     weight: 3
-  - name: "About"
-    url: "/about/"
+  - name: "FAQ"
+    url: "/faq/"
     weight: 4
-  - name: "Contact"
-    url: "/contact/"
-    weight: 5
   - name: "Consulting"
     url: "/consulting/"
+    weight: 5
+  - name: "About"
+    url: "/about/"
     weight: 6
-  - name: "Training"
-    url: "/training/"
+  - name: "Contact"
+    url: "/contact/"
     weight: 7
 
 footer:

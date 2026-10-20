@@ -585,3 +585,186 @@ img { max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+// =======================
+// QUARK landing components
+// =======================
+.section > p + p { margin-top: 1rem; }
+.section > .lead-follow { color: var(--fg); }
+
+.layers-note {
+  margin-top: 1.5rem !important;
+  font-size: 0.98rem;
+  a { color: var(--amber); text-decoration: none; &:hover { text-decoration: underline; } }
+}
+
+// Hero stats row
+.page-home .professional-intro .stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 3.5rem 0 0;
+  background: var(--border-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+
+  > div { background: var(--bg); padding: 1.1rem 1.25rem; }
+  dt {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  dd {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--fg);
+  }
+  @media (max-width: 640px) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+// Raw -> derived -> factors
+.layers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 3rem;
+  counter-reset: layer;
+
+  @media (max-width: 760px) { grid-template-columns: 1fr; }
+}
+.layer {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border-subtle);
+  border-top: 2px solid var(--amber);
+  border-radius: 12px;
+  padding: 1.5rem 1.5rem 1.75rem;
+
+  h3 { font-size: 1.25rem; margin: 0.5rem 0; }
+  p { color: var(--muted); font-size: 0.95rem; margin: 0; line-height: 1.55; }
+
+  &:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--amber);
+    font-size: 1.1rem;
+    z-index: 1;
+    @media (max-width: 760px) { content: '↓'; right: 50%; top: auto; bottom: -22px; transform: translateX(50%); }
+  }
+}
+.layer-tag, .skill-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+// Skills, grouped like a flow
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 3rem;
+}
+.skill-group {
+  background: var(--card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.5rem;
+
+  h3 { font-size: 1.25rem; margin: 0.4rem 0 0.4rem; }
+  > p { color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem; }
+}
+.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  li {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--fg);
+    background: var(--surface-raised);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 4px 8px;
+  }
+}
+
+// "What do you want to do?"
+.ask-map {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 2.5rem;
+}
+.ask {
+  border-left: 2px solid var(--amber);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+
+  .ask-q {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--fg);
+    margin: 0 0 0.5rem;
+  }
+  .ask-a { color: var(--muted); font-size: 0.95rem; margin: 0; }
+  code { color: var(--amber); background: transparent; border: 0; padding: 0; }
+}
+
+// Cohort timeline
+.timeline {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--border-subtle);
+
+  li {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1.5rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+    @media (max-width: 640px) { grid-template-columns: 1fr; gap: 0.25rem; }
+  }
+  .when { font-family: var(--font-mono); font-size: 13px; color: var(--amber); padding-top: 0.2rem; }
+  .what { color: var(--muted); strong { color: var(--fg); font-weight: 600; } }
+}
+
+// Price
+.price {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0 0 0.5rem !important;
+  line-height: 1;
+  span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+}
+.cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.price-box {
+  background: var(--card);
+  border: 1px solid var(--border-subtle);
+  border-top: 2px solid var(--amber);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  margin: 0 0 3rem;
+  text-align: left;
+
+  .price-sub { color: var(--muted) !important; margin: 0 0 1.75rem !important; }
+}
+
+// FAQ group headings
+.faq-content > h2:not(:first-child) { margin-top: 3.5rem; }
