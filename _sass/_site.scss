@@ -132,8 +132,8 @@ img { max-width: 100%; height: auto; }
     padding: 0;
     gap: 4px;
     > li > a {
-      font-family: var(--font-sans);
-      font-size: 15px;
+      font-family: var(--font-mono);
+      font-size: 14px;
       font-weight: 450;
       color: var(--muted);
       padding: 8px 12px;
@@ -158,8 +158,8 @@ img { max-width: 100%; height: auto; }
   background: var(--bg);
   &.open { opacity: 1; }
   ul {
-    font-family: var(--font-serif);
-    font-size: 32px;
+    font-family: var(--font-mono);
+    font-size: 28px;
     li a { color: var(--fg); text-decoration: none; }
   }
 }
