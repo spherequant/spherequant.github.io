@@ -1,6 +1,6 @@
 ---
 layout: redirect
 permalink: /training/
-redirect_to: /quark/
+redirect_to: /
 sitemap: false
 ---

@@ -1,6 +1,6 @@
 ---
 layout: redirect
 permalink: /program/
-redirect_to: /quark/
+redirect_to: /
 sitemap: false
 ---
