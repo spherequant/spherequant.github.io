@@ -773,3 +773,22 @@ img { max-width: 100%; height: auto; }
 .wordmark,
 .main-menu > ul > li > a,
 .main-menu-mobile ul li a { text-transform: lowercase; }
+
+// Header: logo mark + 50% larger type
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 36px;
+  .mark { width: 34px; height: 34px; color: var(--amber); flex-shrink: 0; }
+}
+.header .container { height: 80px; gap: 2rem; }
+.main-menu > ul > li > a { font-size: 24px; padding: 8px 14px; }
+// Seven 24px items don't fit beside the logo below ~1280px: use the hamburger
+@media (max-width: 1359.98px) {
+  .main-menu { display: none !important; }
+  .hamburger { display: inline-block !important; }
+}
+@media (max-width: 480px) {
+  .wordmark { font-size: 26px; .mark { width: 26px; height: 26px; } }
+}

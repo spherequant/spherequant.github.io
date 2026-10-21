@@ -1,37 +1,37 @@
 // _sass/_brand.scss
 // -----------------------------------------------------------------------------
-// SphereQuant brand — Anthropic black with a Bloomberg-terminal amber accent.
+// SphereQuant brand — cool terminal black, neutral greys, one amber signal.
 // Type: Bergoom (open-source, Bloomberg Prop-inspired) everywhere.
 // -----------------------------------------------------------------------------
 
 // Sass copies for legacy components that need real colours at compile time.
-$eq-light-foreground: #F0EEE6;
-$eq-light-muted: #A6A39A;
-$eq-light-border-subtle: #2A2927;
-$eq-light-blue: #FB8B1E;
+$eq-light-foreground: #E6E8EB;
+$eq-light-muted: #8A919C;
+$eq-light-border-subtle: #1C1F25;
+$eq-light-blue: #FF9F1C;
 
 :root {
   color-scheme: dark;
 
-  // Neutrals — Anthropic black and warm ivory text
-  --bg: #141413;
-  --fg: #F0EEE6;
-  --card: #1C1C1A;
-  --surface-raised: #222220;
-  --surface-sunken: #0F0F0E;
-  --muted: #A6A39A;
-  --border: #4A4843;
-  --border-subtle: #2A2927;
-  --accent-bg: #3A2A12;
-  --row-hover: #1F1F1D;
+  // Neutrals — cool terminal black and crisp grey text
+  --bg: #0B0C0E;
+  --fg: #E6E8EB;
+  --card: #121418;
+  --surface-raised: #181B20;
+  --surface-sunken: #08090A;
+  --muted: #8A919C;
+  --border: #2E333B;
+  --border-subtle: #1C1F25;
+  --accent-bg: #2A1D0A;
+  --row-hover: #15181D;
 
   // Bloomberg amber drives actions and highlights
-  --amber: #FB8B1E;
-  --amber-hover: #FFA54A;
+  --amber: #FF9F1C;
+  --amber-hover: #FFB54D;
   --primary: var(--amber);
-  --primary-fg: #141413;
-  --blue: #FB8B1E;
-  --red: #FF6B70;
+  --primary-fg: #0B0C0E;
+  --blue: #FF9F1C;
+  --red: #FF5C5C;
 
   --logo-filter: none;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
