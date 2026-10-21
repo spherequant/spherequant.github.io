@@ -8,6 +8,12 @@
       var themes = ['green', 'amber', 'mono', 'paper'];
       var q = new URLSearchParams(location.search).get('theme');
       try { if (themes.indexOf(q) > -1) { localStorage.setItem('sq-theme', q); } } catch (e) {}
+      var monos = { ioskeley: 'Ioskeley Mono', roboto: 'Roboto Mono', jetbrains: 'JetBrains Mono', fira: 'Fira Mono', source: 'Source Code Pro', plex: 'IBM Plex Mono', geist: 'Geist Mono', space: 'Space Mono' };
+      var mq = new URLSearchParams(location.search).get('mono');
+      try { if (monos[mq]) { localStorage.setItem('sq-mono', mq); localStorage.setItem('sq-theme', localStorage.getItem('sq-theme') || 'green'); } } catch (e) {}
+      var m; try { m = localStorage.getItem('sq-mono'); } catch (e) {}
+      function setMono(k) { document.documentElement.style.setProperty('--font-mono', "'" + monos[k] + "', ui-monospace, Consolas, monospace"); }
+      if (m && monos[m]) setMono(m);
       var t; try { t = localStorage.getItem('sq-theme'); } catch (e) {}
       if (t && t !== 'green') document.documentElement.setAttribute('data-theme', t);
       if (!t) return;
@@ -26,13 +32,20 @@
           };
           bar.appendChild(b);
         });
+        var sel = document.createElement('select');
+        Object.keys(monos).forEach(function (k) {
+          var o = document.createElement('option'); o.value = k; o.textContent = monos[k];
+          if (k === (m || 'ioskeley')) o.selected = true; sel.appendChild(o);
+        });
+        sel.onchange = function () { try { localStorage.setItem('sq-mono', sel.value); } catch (e) {} setMono(sel.value); };
+        bar.appendChild(sel);
         document.body.appendChild(bar);
       });
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Fira+Mono:wght@400;500&family=Source+Code+Pro:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Geist+Mono:wght@400;500&family=Space+Mono&display=swap">
   <title>{% if page.title %}{{page.title}}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="{{ '/images/favicon-32x32.svg' | relative_url }}">

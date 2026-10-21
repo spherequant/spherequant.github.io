@@ -776,8 +776,7 @@ img { max-width: 100%; height: auto; }
 // FAQ group headings
 .faq-content > h2:not(:first-child) { margin-top: 3.5rem; }
 
-// Header: mono, all uppercase
-.wordmark,
+// Header: menu in mono uppercase; logo in Cal Sans lowercase
 .main-menu > ul > li > a,
 .main-menu-mobile ul li a { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; }
 
@@ -812,7 +811,13 @@ img { max-width: 100%; height: auto; }
     font: inherit; text-transform: uppercase;
     &[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
   }
+  select {
+    background: var(--bg); color: var(--fg); border: 1px solid var(--border);
+    font: inherit; padding: 4px 6px; margin-left: 4px;
+  }
 }
 
 // Mono is always uppercase
 code, pre, kbd, samp { text-transform: uppercase; }
+
+.wordmark { font-family: var(--font-serif); text-transform: lowercase; letter-spacing: -0.01em; }
