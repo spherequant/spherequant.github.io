@@ -1,40 +1,45 @@
 // _sass/_brand.scss
 // -----------------------------------------------------------------------------
-// SphereQuant brand — cool terminal black, neutral greys, one amber signal.
-// Type: Bergoom (open-source, Bloomberg Prop-inspired) everywhere.
+// SphereQuant brand — Visualize Value-style monochrome, one optional signal.
+// Type: Cal Sans headings, Inter body, Ioskeley Mono labels.
 // -----------------------------------------------------------------------------
 
 // Sass copies for legacy components that need real colours at compile time.
-$eq-light-foreground: #E6E8EB;
-$eq-light-muted: #8A919C;
-$eq-light-border-subtle: #1C1F25;
-$eq-light-blue: #FF9F1C;
+$eq-light-foreground: #FFFFFF;
+$eq-light-muted: #8C8C8C;
+$eq-light-border-subtle: #262626;
+$eq-light-blue: #3DDC84;
 
+// Four candidate themes, Visualize Value-style: black/white, thin lines, one
+// optional signal colour for data only. Pick with ?theme=green|amber|mono|paper.
+// `--amber` is kept as the token name for the signal/label colour so existing
+// rules keep working; buttons use --primary (white on dark, black on paper).
+
+// 1. Mono + signal green (default)
 :root {
   color-scheme: dark;
 
-  // Neutrals — cool terminal black and crisp grey text
-  --bg: #0B0C0E;
-  --fg: #E6E8EB;
-  --card: #121418;
-  --surface-raised: #181B20;
-  --surface-sunken: #08090A;
-  --muted: #8A919C;
-  --border: #2E333B;
-  --border-subtle: #1C1F25;
-  --accent-bg: #2A1D0A;
-  --row-hover: #15181D;
+  --bg: #000000;
+  --fg: #FFFFFF;
+  --card: #0D0D0D;
+  --surface-raised: #141414;
+  --surface-sunken: #000000;
+  --muted: #8C8C8C;
+  --border: #3A3A3A;
+  --border-subtle: #262626;
+  --accent-bg: #0F2A1B;
+  --row-hover: #111111;
 
-  // Bloomberg amber drives actions and highlights
-  --amber: #FF9F1C;
-  --amber-hover: #FFB54D;
-  --primary: var(--amber);
-  --primary-fg: #0B0C0E;
-  --blue: #FF9F1C;
+  --amber: #3DDC84;
+  --amber-hover: #6BE6A2;
+  --primary: #FFFFFF;
+  --primary-hover: #D9D9D9;
+  --primary-fg: #000000;
+  --blue: var(--amber);
   --red: #FF5C5C;
 
   --logo-filter: none;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow: none;
 
   // Type
   --font-bergoom: 'Bergoom', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -47,4 +52,38 @@ $eq-light-blue: #FF9F1C;
   --radius: 8px;
   --measure: 720px;
   --wide: 1120px;
+}
+
+// 2. Mono + amber signal
+:root[data-theme="amber"] {
+  --amber: #FF9F1C;
+  --amber-hover: #FFB54D;
+  --accent-bg: #2A1D0A;
+}
+
+// 3. Strict mono: no colour, signal is plain white
+:root[data-theme="mono"] {
+  --amber: #FFFFFF;
+  --amber-hover: #D9D9D9;
+  --accent-bg: #1A1A1A;
+}
+
+// 4. Inverted paper: off-white paper, black ink
+:root[data-theme="paper"] {
+  color-scheme: light;
+  --bg: #F4F3EF;
+  --fg: #0A0A0A;
+  --card: #FFFFFF;
+  --surface-raised: #ECEBE6;
+  --surface-sunken: #E6E5E0;
+  --muted: #6B6B6B;
+  --border: #BDBBB4;
+  --border-subtle: #D9D7D0;
+  --accent-bg: #E6E5E0;
+  --row-hover: #ECEBE6;
+  --amber: #0A0A0A;
+  --amber-hover: #333333;
+  --primary: #0A0A0A;
+  --primary-hover: #333333;
+  --primary-fg: #FFFFFF;
 }

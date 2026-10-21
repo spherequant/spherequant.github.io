@@ -3,12 +3,39 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+    (function () {
+      var themes = ['green', 'amber', 'mono', 'paper'];
+      var q = new URLSearchParams(location.search).get('theme');
+      try { if (themes.indexOf(q) > -1) { localStorage.setItem('sq-theme', q); } } catch (e) {}
+      var t; try { t = localStorage.getItem('sq-theme'); } catch (e) {}
+      if (t && t !== 'green') document.documentElement.setAttribute('data-theme', t);
+      if (!t) return;
+      document.addEventListener('DOMContentLoaded', function () {
+        var bar = document.createElement('div');
+        bar.className = 'theme-picker';
+        themes.forEach(function (name) {
+          var b = document.createElement('button');
+          b.textContent = name;
+          b.setAttribute('aria-pressed', String(name === t));
+          b.onclick = function () {
+            try { localStorage.setItem('sq-theme', name); } catch (e) {}
+            if (name === 'green') document.documentElement.removeAttribute('data-theme');
+            else document.documentElement.setAttribute('data-theme', name);
+            bar.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+          };
+          bar.appendChild(b);
+        });
+        document.body.appendChild(bar);
+      });
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:wght@400;500;600&display=swap">
   <title>{% if page.title %}{{page.title}}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/svg+xml" href="{{ '/images/brand/favicon.svg' | relative_url }}">
+  <link rel="icon" type="image/png" href="{{ '/images/favicon-32x32.svg' | relative_url }}">
   <!-- Google Fonts CDN -->
   <meta name="theme-color" content="#141413" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">

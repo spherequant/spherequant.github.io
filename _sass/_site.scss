@@ -202,8 +202,8 @@ img { max-width: 100%; height: auto; }
   color: var(--primary-fg);
   &:visited { color: var(--primary-fg); }
   &:hover {
-    background: var(--amber-hover);
-    border-color: var(--amber-hover);
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
     color: var(--primary-fg);
   }
 }
@@ -791,4 +791,17 @@ img { max-width: 100%; height: auto; }
 }
 @media (max-width: 480px) {
   .wordmark { font-size: 21px; .mark { width: 20px; height: 20px; } }
+}
+
+// Theme picker (only shown after visiting with ?theme=...)
+.theme-picker {
+  position: fixed; right: 16px; bottom: 16px; z-index: 1000;
+  display: flex; gap: 4px; padding: 4px;
+  background: var(--card); border: 1px solid var(--border);
+  font-family: var(--font-mono); font-size: 12px;
+  button {
+    background: transparent; color: var(--muted); border: 0; padding: 6px 10px; cursor: pointer;
+    font: inherit; text-transform: lowercase;
+    &[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+  }
 }
