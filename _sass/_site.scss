@@ -1,4 +1,4 @@
-$mono-labels: ".eyebrow, .section-label, .stats dt, .hub-stats dt, .layer-tag, .skill-num, .tag, .timeline .when, .team-meta";
+$mono-labels: ".eyebrow, .section-label, .stats dt, .hub-stats dt, .layer-tag, .skill-num, .tag";
 // _sass/_site.scss
 // Site-wide styles. Loaded last so it overrides the legacy theme components.
 // All colours come from the custom properties in _brand.scss.
@@ -740,7 +740,7 @@ img { max-width: 100%; height: auto; }
     border-bottom: 1px solid var(--border-subtle);
     @media (max-width: 640px) { grid-template-columns: 1fr; gap: 0.25rem; }
   }
-  .when { font-family: var(--font-mono); font-size: 13px; color: var(--amber); }
+  .when { font-family: var(--font-mono); font-size: 11.7px; text-transform: uppercase; color: var(--amber); }
   .what { color: var(--muted); strong { color: var(--fg); font-weight: 600; } }
 }
 
@@ -803,4 +803,4 @@ $subtitles: ".professional-intro > p, .section > p, .cta-band p";
 .wrapper :is(li, dd) :is(p, li) { zoom: 1; }
 .wrapper :is(#{$subtitles}) { zoom: 0.935; }
 .wrapper :is(h1, h2, h3, h4) { zoom: 0.84; font-weight: 400 !important; }
-.wrapper :is(#{$mono-labels}):is(*, p) { zoom: 1.28; }
+.wrapper :is(.eyebrow, .section-label, .layer-tag, .skill-num):is(*, p) { zoom: 1.28; }
