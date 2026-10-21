@@ -793,10 +793,10 @@ img { max-width: 100%; height: auto; }
 // (code, dates, skill names, stat names) at the same size. Only the labels that
 // sit above headings are enlarged.
 $body-size: 17px;
+$mono-size: 15.5px; // monospace runs wide, so it sits a step below body to look the same size
 .wrapper :is(p, li, td, th, dd, .faq-answer, .timeline .what):not(.price, .stats dd, .hub-stats dd, .eyebrow, .section-label, .layer-tag, .skill-num) { font-size: $body-size; }
 .wrapper .professional-intro > p { font-size: 19px !important; }
 .wrapper :is(.section, .cta-band) > p:not(.section-label, .price), .wrapper .cta-band p:not(.price) { font-size: 18px !important; }
-.wrapper :is(code, .timeline .when, .skills li, .stats dt, .hub-stats dt, .tag) { font-size: $body-size !important; }
-.wrapper :is(p, li, dd) code { font-size: 1em; }
+.wrapper :is(code, .timeline .when, .skills li, .stats dt, .hub-stats dt, .tag) { font-size: $mono-size !important; }
 .wrapper :is(h1, h2, h3, h4) { zoom: 0.84; font-weight: 400 !important; }
 .wrapper :is(.eyebrow, .section-label, .layer-tag, .skill-num):is(*, p) { zoom: 1.28; }
