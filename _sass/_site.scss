@@ -562,24 +562,17 @@ img { max-width: 100%; height: auto; }
     gap: 1rem;
   }
   .footer-brand {
-    font-family: var(--font-serif) !important;
-    font-size: 1.1rem;
+    font-family: var(--font-logo) !important;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
     color: var(--fg);
   }
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    a { color: var(--muted); text-decoration: none; font-size: 14px; &:hover { color: var(--amber); } }
-  }
   .footer-legal {
-    width: 100%;
     font-size: 13px;
     color: var(--muted);
-    margin: 1rem 0 0;
+    margin: 0;
   }
 }
 
@@ -740,7 +733,7 @@ img { max-width: 100%; height: auto; }
     border-bottom: 1px solid var(--border-subtle);
     @media (max-width: 640px) { grid-template-columns: 1fr; gap: 0.25rem; }
   }
-  .when { font-family: var(--font-mono); font-size: 11.7px; text-transform: uppercase; color: var(--amber); }
+  .when { font-family: var(--font-mono); font-size: 11.7px; color: var(--amber); }
   .what { color: var(--muted); strong { color: var(--fg); font-weight: 600; } }
 }
 
