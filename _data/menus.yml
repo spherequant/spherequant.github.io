@@ -1,23 +1,23 @@
 main:
-  - name: "QUARK"
+  - name: "Quark"
     url: "/"
     weight: 1
-  - name: "CURRICULUM"
+  - name: "Curriculum"
     url: "/curriculum/"
     weight: 2
-  - name: "PRICING"
+  - name: "Pricing"
     url: "/pricing/"
     weight: 3
   - name: "FAQ"
     url: "/faq/"
     weight: 4
-  - name: "CONSULTING"
+  - name: "Consulting"
     url: "/consulting/"
     weight: 5
-  - name: "ABOUT"
+  - name: "About"
     url: "/about/"
     weight: 6
-  - name: "CONTACT"
+  - name: "Contact"
     url: "/contact/"
     weight: 7
 

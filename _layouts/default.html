@@ -35,7 +35,7 @@
         var sel = document.createElement('select');
         Object.keys(monos).forEach(function (k) {
           var o = document.createElement('option'); o.value = k; o.textContent = monos[k];
-          if (k === (m || 'ioskeley')) o.selected = true; sel.appendChild(o);
+          if (k === (m || 'roboto')) o.selected = true; sel.appendChild(o);
         });
         sel.onchange = function () { try { localStorage.setItem('sq-mono', sel.value); } catch (e) {} setMono(sel.value); };
         bar.appendChild(sel);
@@ -45,7 +45,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Fira+Mono:wght@400;500&family=Source+Code+Pro:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Geist+Mono:wght@400;500&family=Space+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Fira+Mono:wght@400;500&family=Source+Code+Pro:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Geist+Mono:wght@400;500&family=Space+Mono&display=swap">
   <title>{% if page.title %}{{page.title}}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="{{ '/images/favicon-32x32.svg' | relative_url }}">

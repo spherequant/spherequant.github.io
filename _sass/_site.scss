@@ -24,7 +24,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  font-weight: 400;
+  font-weight: 500;
   color: var(--fg);
   letter-spacing: var(--tracking);
   line-height: 1.15;
@@ -776,9 +776,9 @@ img { max-width: 100%; height: auto; }
 // FAQ group headings
 .faq-content > h2:not(:first-child) { margin-top: 3.5rem; }
 
-// Header: menu in mono uppercase; logo in Cal Sans lowercase
+// Header: menu in mono, first letter capitalised; logo in Geist lowercase
 .main-menu > ul > li > a,
-.main-menu-mobile ul li a { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; }
+.main-menu-mobile ul li a { font-family: var(--font-mono); text-transform: none; letter-spacing: 0; }
 
 // Header: logo mark + 50% larger type
 .wordmark {
@@ -820,4 +820,4 @@ img { max-width: 100%; height: auto; }
 // Mono is always uppercase
 code, pre, kbd, samp { text-transform: uppercase; }
 
-.wordmark { font-family: var(--font-serif); text-transform: lowercase; letter-spacing: -0.01em; }
+.wordmark { font-family: 'Geist', var(--font-sans); font-weight: 600; text-transform: lowercase; letter-spacing: -0.03em; }
