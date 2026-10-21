@@ -735,11 +735,12 @@ img { max-width: 100%; height: auto; }
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 1.5rem;
+    align-items: baseline;
     padding: 1.1rem 0;
     border-bottom: 1px solid var(--border-subtle);
     @media (max-width: 640px) { grid-template-columns: 1fr; gap: 0.25rem; }
   }
-  .when { font-family: var(--font-mono); font-size: 13px; color: var(--amber); padding-top: 0.2rem; }
+  .when { font-family: var(--font-mono); font-size: 13px; color: var(--amber); }
   .what { color: var(--muted); strong { color: var(--fg); font-weight: 600; } }
 }
 
