@@ -24,7 +24,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  font-weight: 600;
+  font-weight: 400;
   color: var(--fg);
   letter-spacing: var(--tracking);
   line-height: 1.15;
@@ -238,7 +238,7 @@ img { max-width: 100%; height: auto; }
   }
 
   p {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: clamp(1.2rem, 2.2vw, 1.45rem);
     line-height: 1.5;
     color: var(--muted);
@@ -394,7 +394,7 @@ img { max-width: 100%; height: auto; }
     margin: 2rem 0;
     padding: 0.25rem 0 0.25rem 1.25rem;
     border-left: 2px solid var(--amber);
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     font-size: 1.25rem;
     color: var(--muted);
   }
