@@ -854,3 +854,7 @@ $subtitles: ".professional-intro > p, .section > p, .cta-band p";
   }
 }
 :root[style*="--heading-weight"] .wrapper :is(h1, h2, h3, h4) { font-weight: var(--heading-weight) !important; }
+:root[data-logo-case="uppercase"] .wordmark { text-transform: uppercase; }
+:root[data-logo-case="lowercase"] .wordmark { text-transform: lowercase; }
+:root[data-logo-case="capitalize"] .wordmark { text-transform: lowercase; display: inline-block; }
+:root[data-logo-case="capitalize"] .wordmark::first-letter { text-transform: uppercase; }

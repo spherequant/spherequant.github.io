@@ -28,7 +28,7 @@
   var DEFAULTS = {
     theme: 'green',
     heading: 'Geist', body: 'Inter', logo: 'Geist', mono: 'Roboto Mono',
-    monoCase: 'uppercase', menuCase: 'none',
+    monoCase: 'uppercase', menuCase: 'none', logoCase: 'lowercase',
     logoSize: 25, logoWeight: 600, headingWeight: 400, menuSize: 17, headingScale: 100, subtitleScale: 100, labelScale: 100, bodyScale: 100
   };
 
@@ -74,6 +74,7 @@
     root.style.setProperty('--font-mono', stack(cfg('mono'), true));
     root.setAttribute('data-mono-case', cfg('monoCase'));
     root.setAttribute('data-menu-case', cfg('menuCase'));
+    root.setAttribute('data-logo-case', cfg('logoCase'));
     root.style.setProperty('--logo-size', cfg('logoSize') + 'px');
     root.style.setProperty('--menu-size', cfg('menuSize') + 'px');
     root.style.setProperty('--logo-weight', cfg('logoWeight'));
@@ -145,6 +146,7 @@
       select('Heading font', 'heading', all),
       select('Body font', 'body', all),
       select('Logo font', 'logo', all),
+      select('Logo case', 'logoCase', [['uppercase', 'ALL CAPS'], ['capitalize', 'First letter'], ['lowercase', 'all lowercase']]),
       select('Mono font', 'mono', monos),
       select('Mono case', 'monoCase', cases),
       select('Menu case', 'menuCase', cases),
