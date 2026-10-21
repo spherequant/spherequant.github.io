@@ -3,49 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <script>
-    (function () {
-      var themes = ['green', 'amber', 'mono', 'paper'];
-      var q = new URLSearchParams(location.search).get('theme');
-      try { if (themes.indexOf(q) > -1) { localStorage.setItem('sq-theme', q); } } catch (e) {}
-      var monos = { ioskeley: 'Ioskeley Mono', roboto: 'Roboto Mono', jetbrains: 'JetBrains Mono', fira: 'Fira Mono', source: 'Source Code Pro', plex: 'IBM Plex Mono', geist: 'Geist Mono', space: 'Space Mono' };
-      var mq = new URLSearchParams(location.search).get('mono');
-      try { if (monos[mq]) { localStorage.setItem('sq-mono', mq); localStorage.setItem('sq-theme', localStorage.getItem('sq-theme') || 'green'); } } catch (e) {}
-      var m; try { m = localStorage.getItem('sq-mono'); } catch (e) {}
-      function setMono(k) { document.documentElement.style.setProperty('--font-mono', "'" + monos[k] + "', ui-monospace, Consolas, monospace"); }
-      if (m && monos[m]) setMono(m);
-      var t; try { t = localStorage.getItem('sq-theme'); } catch (e) {}
-      if (t && t !== 'green') document.documentElement.setAttribute('data-theme', t);
-      if (!t) return;
-      document.addEventListener('DOMContentLoaded', function () {
-        var bar = document.createElement('div');
-        bar.className = 'theme-picker';
-        themes.forEach(function (name) {
-          var b = document.createElement('button');
-          b.textContent = name;
-          b.setAttribute('aria-pressed', String(name === t));
-          b.onclick = function () {
-            try { localStorage.setItem('sq-theme', name); } catch (e) {}
-            if (name === 'green') document.documentElement.removeAttribute('data-theme');
-            else document.documentElement.setAttribute('data-theme', name);
-            bar.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-          };
-          bar.appendChild(b);
-        });
-        var sel = document.createElement('select');
-        Object.keys(monos).forEach(function (k) {
-          var o = document.createElement('option'); o.value = k; o.textContent = monos[k];
-          if (k === (m || 'roboto')) o.selected = true; sel.appendChild(o);
-        });
-        sel.onchange = function () { try { localStorage.setItem('sq-mono', sel.value); } catch (e) {} setMono(sel.value); };
-        bar.appendChild(sel);
-        document.body.appendChild(bar);
-      });
-    })();
-  </script>
+  <script src="{{ '/assets/js/style-panel.js' | relative_url }}"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Fira+Mono:wght@400;500&family=Source+Code+Pro:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Geist+Mono:wght@400;500&family=Space+Mono&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap">
   <title>{% if page.title %}{{page.title}}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="{{ '/images/favicon-32x32.svg' | relative_url }}">

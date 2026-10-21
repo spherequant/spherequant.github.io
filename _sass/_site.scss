@@ -785,11 +785,11 @@ img { max-width: 100%; height: auto; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 25px;
+  font-size: var(--logo-size, 25px);
   .mark { width: 24px; height: 24px; color: var(--amber); flex-shrink: 0; }
 }
 .header .container { height: 68px; gap: 2rem; }
-.main-menu > ul > li > a { font-size: 17px; padding: 8px 12px; }
+.main-menu > ul > li > a { font-size: var(--menu-size, 17px); padding: 8px 12px; }
 // Seven menu items don't fit beside the logo below ~1024px: use the hamburger
 @media (max-width: 1023.98px) {
   .main-menu { display: none !important; }
@@ -799,25 +799,52 @@ img { max-width: 100%; height: auto; }
   .wordmark { font-size: 21px; .mark { width: 20px; height: 20px; } }
 }
 
-// Theme picker (only shown after visiting with ?theme=...)
-.theme-picker {
-  position: fixed; right: 16px; bottom: 16px; z-index: 1000;
-  display: flex; gap: 4px; padding: 4px;
-  background: var(--card); border: 1px solid var(--border);
-  font-family: var(--font-mono);
-  text-transform: uppercase; font-size: 12px;
-  button {
-    background: transparent; color: var(--muted); border: 0; padding: 6px 10px; cursor: pointer;
-    font: inherit; text-transform: uppercase;
-    &[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
-  }
-  select {
-    background: var(--bg); color: var(--fg); border: 1px solid var(--border);
-    font: inherit; padding: 4px 6px; margin-left: 4px;
-  }
-}
 
 // Mono is always uppercase
 code, pre, kbd, samp { text-transform: uppercase; }
 
-.wordmark { font-family: 'Geist', var(--font-sans); font-weight: 600; text-transform: lowercase; letter-spacing: -0.03em; }
+.wordmark { font-family: var(--font-logo); font-weight: 600; text-transform: lowercase; letter-spacing: -0.03em; }
+
+// Style panel (assets/js/style-panel.js): case and size controls
+:root[data-mono-case] .is-mono { text-transform: var(--mono-case) !important; }
+:root[data-mono-case="uppercase"] { --mono-case: uppercase; }
+:root[data-mono-case="lowercase"], :root[data-mono-case="capitalize"] { --mono-case: lowercase; }
+:root[data-mono-case="none"] { --mono-case: none; }
+:root[data-mono-case="capitalize"] .is-mono::first-letter { text-transform: uppercase; }
+:root[data-menu-case] .main-menu > ul > li > a,
+:root[data-menu-case] .main-menu-mobile ul li a { text-transform: var(--menu-case) !important; }
+:root[data-menu-case="uppercase"] { --menu-case: uppercase; }
+:root[data-menu-case="lowercase"], :root[data-menu-case="capitalize"] { --menu-case: lowercase; }
+:root[data-menu-case="none"] { --menu-case: none; }
+:root[data-menu-case="capitalize"] .main-menu > ul > li > a::first-letter { text-transform: uppercase; }
+.main-menu > ul > li > a { display: inline-block; }
+:root[style*="--body-scale"] .wrapper :is(p, li, td, th, dd, .faq-answer) { zoom: var(--body-scale); }
+:root[style*="--body-scale"] .wrapper :is(li, dd) :is(p, li) { zoom: 1; }
+
+.style-panel {
+  position: fixed; right: 16px; bottom: 16px; z-index: 1000;
+  width: 280px;
+  background: var(--card); color: var(--fg);
+  border: 1px solid var(--border);
+  font: 12px/1.4 ui-monospace, Consolas, monospace;
+  text-transform: none;
+  button { font: inherit; cursor: pointer; }
+  .sp-toggle {
+    width: 100%; text-align: left; padding: 8px 12px;
+    background: transparent; color: var(--fg); border: 0;
+    &::after { content: '+'; float: right; }
+  }
+  &.open .sp-toggle::after { content: '−'; }
+  .sp-body { display: none; padding: 4px 12px 12px; max-height: 70vh; overflow: auto; }
+  &.open .sp-body { display: block; }
+  label { display: grid; grid-template-columns: 96px 1fr auto; align-items: center; gap: 8px; margin: 0 0 8px; }
+  label span { color: var(--muted); }
+  label em { font-style: normal; color: var(--muted); min-width: 38px; text-align: right; }
+  select, input { width: 100%; min-width: 0; }
+  select { background: var(--bg); color: var(--fg); border: 1px solid var(--border); padding: 4px; font: inherit; }
+  label:has(select) { grid-template-columns: 96px 1fr; }
+  .sp-actions { display: flex; gap: 8px; margin-top: 12px;
+    button { flex: 1; padding: 6px; background: var(--fg); color: var(--bg); border: 0; }
+    button + button { background: transparent; color: var(--fg); border: 1px solid var(--border); }
+  }
+}
