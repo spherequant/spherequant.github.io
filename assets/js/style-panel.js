@@ -86,17 +86,6 @@
   }
   apply();
 
-  // Tag elements set in the mono font so the case control can reach them.
-  function tagMono() {
-    var probe = getComputedStyle(root).getPropertyValue('--font-mono').split(',')[0].trim().replace(/['"]/g, '');
-    document.querySelectorAll('body *').forEach(function (el) {
-      if (el.closest('.style-panel')) return;
-      if (el.closest('.main-menu, .main-menu-mobile')) return;
-      var ff = getComputedStyle(el).fontFamily.split(',')[0].trim().replace(/['"]/g, '');
-      if (ff === probe) el.classList.add('is-mono');
-    });
-  }
-
   function select(label, key, options) {
     var w = document.createElement('label');
     w.innerHTML = '<span>' + label + '</span>';
@@ -125,8 +114,6 @@
     return w;
   }
 
-  // Tag once styles are in, so computed fonts are real.
-  window.addEventListener('load', tagMono);
 
   document.addEventListener('DOMContentLoaded', function () {
     var all = Object.keys(FONTS);
@@ -148,7 +135,7 @@
       select('Logo font', 'logo', all),
       select('Logo case', 'logoCase', [['uppercase', 'ALL CAPS'], ['capitalize', 'First letter'], ['lowercase', 'all lowercase']]),
       select('Mono font', 'mono', monos),
-      select('Mono case', 'monoCase', cases),
+      select('Label case', 'monoCase', cases),
       select('Menu case', 'menuCase', cases),
       slider('Logo size', 'logoSize', 14, 40, 'px'),
       slider('Logo weight', 'logoWeight', 100, 900, ''),

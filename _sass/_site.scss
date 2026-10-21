@@ -1,3 +1,4 @@
+$mono-labels: ".eyebrow, .section-label, .stats dt, .hub-stats dt, .layer-tag, .skill-num, .tag";
 // _sass/_site.scss
 // Site-wide styles. Loaded last so it overrides the legacy theme components.
 // All colours come from the custom properties in _brand.scss.
@@ -133,7 +134,6 @@ img { max-width: 100%; height: auto; }
     gap: 4px;
     > li > a {
       font-family: var(--font-mono);
-      text-transform: uppercase;
       font-size: 14px;
       font-weight: 450;
       color: var(--muted);
@@ -160,7 +160,6 @@ img { max-width: 100%; height: auto; }
   &.open { opacity: 1; }
   ul {
     font-family: var(--font-mono);
-    text-transform: uppercase;
     font-size: 28px;
     li a { color: var(--fg); text-decoration: none; }
   }
@@ -224,7 +223,6 @@ img { max-width: 100%; height: auto; }
   .eyebrow {
     display: inline-block;
     font-family: var(--font-mono);
-    text-transform: uppercase;
     font-size: 13px;
     letter-spacing: var(--tracking);
     text-transform: uppercase;
@@ -260,7 +258,6 @@ img { max-width: 100%; height: auto; }
 
   .section-label {
     font-family: var(--font-mono);
-    text-transform: uppercase;
     font-size: 13px;
     letter-spacing: var(--tracking);
     text-transform: uppercase;
@@ -616,7 +613,6 @@ img { max-width: 100%; height: auto; }
   > div { background: var(--bg); padding: 1.1rem 1.25rem; }
   dt {
     font-family: var(--font-mono);
-    text-transform: uppercase;
     font-size: 12px;
     text-transform: uppercase;
     color: var(--muted);
@@ -667,7 +663,6 @@ img { max-width: 100%; height: auto; }
 }
 .layer-tag, .skill-num {
   font-family: var(--font-mono);
-  text-transform: uppercase;
   font-size: 12px;
   text-transform: uppercase;
   color: var(--amber);
@@ -699,7 +694,6 @@ img { max-width: 100%; height: auto; }
 
   li {
     font-family: var(--font-mono);
-    text-transform: uppercase;
     font-size: 13px;
     color: var(--fg);
     background: var(--surface-raised);
@@ -800,17 +794,19 @@ img { max-width: 100%; height: auto; }
 }
 
 
-// Mono is always uppercase
-code, pre, kbd, samp { text-transform: uppercase; }
+// Mono labels (kickers, stat names, tags) are set in caps; mono inside copy
+// (code, skill names, dates) keeps normal case.
+:is(#{$mono-labels}) { text-transform: uppercase; }
 
 .wordmark { font-family: var(--font-logo); font-weight: var(--logo-weight, 600); text-transform: lowercase; letter-spacing: -0.03em; }
 
 // Style panel (assets/js/style-panel.js): case and size controls
-:root[data-mono-case] .is-mono { text-transform: var(--mono-case) !important; }
+:root[data-mono-case] :is(#{$mono-labels}) { text-transform: var(--mono-case) !important; }
 :root[data-mono-case="uppercase"] { --mono-case: uppercase; }
 :root[data-mono-case="lowercase"], :root[data-mono-case="capitalize"] { --mono-case: lowercase; }
 :root[data-mono-case="none"] { --mono-case: none; }
-:root[data-mono-case="capitalize"] .is-mono::first-letter { text-transform: uppercase; }
+:root[data-mono-case="capitalize"] :is(#{$mono-labels}) { display: inline-block; }
+:root[data-mono-case="capitalize"] :is(#{$mono-labels})::first-letter { text-transform: uppercase; }
 :root[data-menu-case] .main-menu > ul > li > a,
 :root[data-menu-case] .main-menu-mobile ul li a { text-transform: var(--menu-case) !important; }
 :root[data-menu-case="uppercase"] { --menu-case: uppercase; }
@@ -820,9 +816,9 @@ code, pre, kbd, samp { text-transform: uppercase; }
 .main-menu > ul > li > a { display: inline-block; }
 // Subtitles = the intro paragraph under a heading; labels = small mono kickers above it.
 $subtitles: ".professional-intro > p, .section > p, .cta-band p";
-:root[style*="--body-scale"] .wrapper :is(p, li, td, th, dd, .faq-answer):not(#{$subtitles}) { zoom: var(--body-scale); }
+:root[style*="--body-scale"] .wrapper :is(p, li, td, th, dd, .faq-answer):not(#{$mono-labels}) { zoom: var(--body-scale); }
 :root[style*="--heading-scale"] .wrapper :is(h1, h2, h3, h4) { zoom: var(--heading-scale); }
-:root[style*="--subtitle-scale"] .wrapper :is(#{$subtitles}) { zoom: var(--subtitle-scale); }
+:root[style*="--subtitle-scale"] .wrapper :is(#{$subtitles}) { zoom: calc(var(--body-scale, 1) * var(--subtitle-scale)); }
 :root[style*="--label-scale"] .wrapper :is(.eyebrow, .section-label) { zoom: var(--label-scale); }
 :root[style*="--body-scale"] .wrapper :is(li, dd) :is(p, li) { zoom: 1; }
 
