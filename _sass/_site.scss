@@ -1,4 +1,4 @@
-$mono-labels: ".eyebrow, .section-label, .stats dt, .hub-stats dt, .layer-tag, .skill-num, .tag";
+$mono-labels: ".eyebrow, .section-label, .stats dt, .hub-stats dt, .layer-tag, .skill-num, .tag, .timeline .when, .team-meta";
 // _sass/_site.scss
 // Site-wide styles. Loaded last so it overrides the legacy theme components.
 // All colours come from the custom properties in _brand.scss.
@@ -176,7 +176,7 @@ img { max-width: 100%; height: auto; }
   line-height: 1.2;
   padding: 0.8rem 1.4rem;
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: var(--tracking);
   text-transform: none;
@@ -802,4 +802,4 @@ $subtitles: ".professional-intro > p, .section > p, .cta-band p";
 .wrapper :is(li, dd) :is(p, li) { zoom: 1; }
 .wrapper :is(#{$subtitles}) { zoom: 0.935; }
 .wrapper :is(h1, h2, h3, h4) { zoom: 0.84; font-weight: 400 !important; }
-.wrapper :is(.eyebrow, .section-label) { zoom: 1.28; }
+.wrapper :is(#{$mono-labels}):is(*, p) { zoom: 1.28; }
