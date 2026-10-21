@@ -15,7 +15,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
-  font-size: 17px;
+  font-size: 14.5px;
   line-height: 1.6;
   letter-spacing: var(--tracking);
   -webkit-font-smoothing: antialiased;
@@ -133,6 +133,7 @@ img { max-width: 100%; height: auto; }
     gap: 4px;
     > li > a {
       font-family: var(--font-mono);
+      text-transform: uppercase;
       font-size: 14px;
       font-weight: 450;
       color: var(--muted);
@@ -159,6 +160,7 @@ img { max-width: 100%; height: auto; }
   &.open { opacity: 1; }
   ul {
     font-family: var(--font-mono);
+    text-transform: uppercase;
     font-size: 28px;
     li a { color: var(--fg); text-decoration: none; }
   }
@@ -175,7 +177,7 @@ img { max-width: 100%; height: auto; }
   line-height: 1.2;
   padding: 0.8rem 1.4rem;
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: var(--tracking);
   text-transform: none;
@@ -208,7 +210,7 @@ img { max-width: 100%; height: auto; }
   }
 }
 
-.btn-lg { padding: 0.95rem 1.6rem; font-size: 16px; }
+.btn-lg { padding: 0.95rem 1.6rem; font-size: 13.5px; }
 
 // =======================
 // Home hero
@@ -222,6 +224,7 @@ img { max-width: 100%; height: auto; }
   .eyebrow {
     display: inline-block;
     font-family: var(--font-mono);
+    text-transform: uppercase;
     font-size: 13px;
     letter-spacing: var(--tracking);
     text-transform: uppercase;
@@ -239,7 +242,7 @@ img { max-width: 100%; height: auto; }
 
   p {
     font-family: var(--font-sans);
-    font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+    font-size: clamp(1.02rem, 1.9vw, 1.23rem);
     line-height: 1.5;
     color: var(--muted);
     max-width: 640px;
@@ -257,6 +260,7 @@ img { max-width: 100%; height: auto; }
 
   .section-label {
     font-family: var(--font-mono);
+    text-transform: uppercase;
     font-size: 13px;
     letter-spacing: var(--tracking);
     text-transform: uppercase;
@@ -270,7 +274,7 @@ img { max-width: 100%; height: auto; }
     margin: 0 0 1rem;
   }
   > p {
-    font-size: 1.1rem;
+    font-size: 0.935rem;
     color: var(--muted);
     max-width: 640px;
     margin: 0;
@@ -303,7 +307,7 @@ img { max-width: 100%; height: auto; }
     margin: 0 0 0.75rem;
   }
   p {
-    font-size: 0.98rem;
+    font-size: 0.83rem;
     color: var(--muted);
     line-height: 1.6;
     margin: 0;
@@ -380,7 +384,7 @@ img { max-width: 100%; height: auto; }
   h4 { font-size: 1.1rem; margin: 2rem 0 0.5rem; }
 
   p, li {
-    font-size: 1.0625rem;
+    font-size: 0.9rem;
     line-height: 1.7;
     color: var(--fg);
   }
@@ -395,7 +399,7 @@ img { max-width: 100%; height: auto; }
     padding: 0.25rem 0 0.25rem 1.25rem;
     border-left: 2px solid var(--amber);
     font-family: var(--font-sans);
-    font-size: 1.25rem;
+    font-size: 1.06rem;
     color: var(--muted);
   }
 
@@ -404,7 +408,7 @@ img { max-width: 100%; height: auto; }
     border-collapse: separate;
     border-spacing: 0;
     margin: 2rem 0;
-    font-size: 0.95rem;
+    font-size: 0.81rem;
     font-variant-numeric: tabular-nums;
     background: var(--card);
     border: 1px solid var(--border-subtle);
@@ -501,7 +505,7 @@ img { max-width: 100%; height: auto; }
 
 .faq-answer {
   padding: 0 0 1.5rem;
-  p, li { color: var(--muted); font-size: 1.0625rem; line-height: 1.7; }
+  p, li { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
   p { margin: 0 0 1rem; }
   ul { list-style: disc; padding-left: 1.4rem; margin: 0 0 1rem; }
   li { margin-bottom: 0.4rem; }
@@ -594,7 +598,7 @@ img { max-width: 100%; height: auto; }
 
 .layers-note {
   margin-top: 1.5rem !important;
-  font-size: 0.98rem;
+  font-size: 0.83rem;
   a { color: var(--amber); text-decoration: none; &:hover { text-decoration: underline; } }
 }
 
@@ -612,6 +616,7 @@ img { max-width: 100%; height: auto; }
   > div { background: var(--bg); padding: 1.1rem 1.25rem; }
   dt {
     font-family: var(--font-mono);
+    text-transform: uppercase;
     font-size: 12px;
     text-transform: uppercase;
     color: var(--muted);
@@ -646,7 +651,7 @@ img { max-width: 100%; height: auto; }
   padding: 1.5rem 1.5rem 1.75rem;
 
   h3 { font-size: 1.25rem; margin: 0.5rem 0; }
-  p { color: var(--muted); font-size: 0.95rem; margin: 0; line-height: 1.55; }
+  p { color: var(--muted); font-size: 0.81rem; margin: 0; line-height: 1.55; }
 
   &:not(:last-child)::after {
     content: '→';
@@ -662,6 +667,7 @@ img { max-width: 100%; height: auto; }
 }
 .layer-tag, .skill-num {
   font-family: var(--font-mono);
+  text-transform: uppercase;
   font-size: 12px;
   text-transform: uppercase;
   color: var(--amber);
@@ -681,7 +687,7 @@ img { max-width: 100%; height: auto; }
   padding: 1.5rem;
 
   h3 { font-size: 1.25rem; margin: 0.4rem 0 0.4rem; }
-  > p { color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem; }
+  > p { color: var(--muted); font-size: 0.81rem; margin: 0 0 1rem; }
 }
 .skills {
   list-style: none;
@@ -693,6 +699,7 @@ img { max-width: 100%; height: auto; }
 
   li {
     font-family: var(--font-mono);
+    text-transform: uppercase;
     font-size: 13px;
     color: var(--fg);
     background: var(--surface-raised);
@@ -719,7 +726,7 @@ img { max-width: 100%; height: auto; }
     color: var(--fg);
     margin: 0 0 0.5rem;
   }
-  .ask-a { color: var(--muted); font-size: 0.95rem; margin: 0; }
+  .ask-a { color: var(--muted); font-size: 0.81rem; margin: 0; }
   code { color: var(--amber); background: transparent; border: 0; padding: 0; }
 }
 
@@ -769,10 +776,10 @@ img { max-width: 100%; height: auto; }
 // FAQ group headings
 .faq-content > h2:not(:first-child) { margin-top: 3.5rem; }
 
-// Header: all lowercase
+// Header: mono, all uppercase
 .wordmark,
 .main-menu > ul > li > a,
-.main-menu-mobile ul li a { text-transform: lowercase; }
+.main-menu-mobile ul li a { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; }
 
 // Header: logo mark + 50% larger type
 .wordmark {
@@ -798,10 +805,14 @@ img { max-width: 100%; height: auto; }
   position: fixed; right: 16px; bottom: 16px; z-index: 1000;
   display: flex; gap: 4px; padding: 4px;
   background: var(--card); border: 1px solid var(--border);
-  font-family: var(--font-mono); font-size: 12px;
+  font-family: var(--font-mono);
+  text-transform: uppercase; font-size: 12px;
   button {
     background: transparent; color: var(--muted); border: 0; padding: 6px 10px; cursor: pointer;
-    font: inherit; text-transform: lowercase;
+    font: inherit; text-transform: uppercase;
     &[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
   }
 }
+
+// Mono is always uppercase
+code, pre, kbd, samp { text-transform: uppercase; }
