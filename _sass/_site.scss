@@ -24,7 +24,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  font-weight: 500;
+  font-weight: var(--heading-weight, 500);
   color: var(--fg);
   letter-spacing: var(--tracking);
   line-height: 1.15;
@@ -803,7 +803,7 @@ img { max-width: 100%; height: auto; }
 // Mono is always uppercase
 code, pre, kbd, samp { text-transform: uppercase; }
 
-.wordmark { font-family: var(--font-logo); font-weight: 600; text-transform: lowercase; letter-spacing: -0.03em; }
+.wordmark { font-family: var(--font-logo); font-weight: var(--logo-weight, 600); text-transform: lowercase; letter-spacing: -0.03em; }
 
 // Style panel (assets/js/style-panel.js): case and size controls
 :root[data-mono-case] .is-mono { text-transform: var(--mono-case) !important; }
@@ -853,3 +853,4 @@ $subtitles: ".professional-intro > p, .section > p, .cta-band p";
     button + button { background: transparent; color: var(--fg); border: 1px solid var(--border); }
   }
 }
+:root[style*="--heading-weight"] .wrapper :is(h1, h2, h3, h4) { font-weight: var(--heading-weight) !important; }

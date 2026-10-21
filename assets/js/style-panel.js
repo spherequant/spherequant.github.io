@@ -10,11 +10,11 @@
   var FONTS = {
     'Bergoom':         { src: 'local' },
     'Ioskeley Mono':   { src: 'local', mono: true },
-    'Inter':           { src: 'google', q: 'Inter:wght@400;500;600' },
-    'Geist':           { src: 'google', q: 'Geist:wght@400;500;600' },
+    'Inter':           { src: 'google', q: 'Inter:wght@100..900' },
+    'Geist':           { src: 'google', q: 'Geist:wght@100..900' },
     'Cal Sans':        { src: 'google', q: 'Cal+Sans' },
-    'IBM Plex Sans':   { src: 'google', q: 'IBM+Plex+Sans:wght@400;500;600' },
-    'Source Serif 4':  { src: 'google', q: 'Source+Serif+4:wght@400;600' },
+    'IBM Plex Sans':   { src: 'google', q: 'IBM+Plex+Sans:wght@100;200;300;400;500;600;700' },
+    'Source Serif 4':  { src: 'google', q: 'Source+Serif+4:wght@200..900' },
     'Roboto Mono':     { src: 'google', q: 'Roboto+Mono:wght@400;500', mono: true },
     'Geist Mono':      { src: 'google', q: 'Geist+Mono:wght@400;500', mono: true },
     'JetBrains Mono':  { src: 'google', q: 'JetBrains+Mono:wght@400;500', mono: true },
@@ -29,7 +29,7 @@
     theme: 'green',
     heading: 'Geist', body: 'Inter', logo: 'Geist', mono: 'Roboto Mono',
     monoCase: 'uppercase', menuCase: 'none',
-    logoSize: 25, menuSize: 17, headingScale: 100, subtitleScale: 100, labelScale: 100, bodyScale: 100
+    logoSize: 25, logoWeight: 600, headingWeight: 400, menuSize: 17, headingScale: 100, subtitleScale: 100, labelScale: 100, bodyScale: 100
   };
 
   var params = new URLSearchParams(location.search);
@@ -76,6 +76,8 @@
     root.setAttribute('data-menu-case', cfg('menuCase'));
     root.style.setProperty('--logo-size', cfg('logoSize') + 'px');
     root.style.setProperty('--menu-size', cfg('menuSize') + 'px');
+    root.style.setProperty('--logo-weight', cfg('logoWeight'));
+    root.style.setProperty('--heading-weight', cfg('headingWeight'));
     root.style.setProperty('--body-scale', cfg('bodyScale') / 100);
     root.style.setProperty('--heading-scale', cfg('headingScale') / 100);
     root.style.setProperty('--subtitle-scale', cfg('subtitleScale') / 100);
@@ -116,6 +118,7 @@
     w.innerHTML = '<span>' + label + '</span>';
     var el = document.createElement('input');
     el.type = 'range'; el.min = min; el.max = max; el.value = cfg(key);
+    if (unit === '') el.step = 100;
     el.oninput = function () { s[key] = +el.value; out.textContent = el.value + unit; save(); apply(); };
     w.appendChild(el); w.appendChild(out);
     return w;
@@ -146,8 +149,10 @@
       select('Mono case', 'monoCase', cases),
       select('Menu case', 'menuCase', cases),
       slider('Logo size', 'logoSize', 14, 40, 'px'),
+      slider('Logo weight', 'logoWeight', 100, 900, ''),
       slider('Menu size', 'menuSize', 11, 26, 'px'),
       slider('Headings', 'headingScale', 50, 150, '%'),
+      slider('Heading wt', 'headingWeight', 100, 900, ''),
       slider('Subtitles', 'subtitleScale', 60, 150, '%'),
       slider('Labels', 'labelScale', 60, 160, '%'),
       slider('Body text', 'bodyScale', 70, 130, '%')
