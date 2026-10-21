@@ -36,26 +36,29 @@
   font-display: swap;
 }
 
+
+
+
 @font-face {
-  font-family: 'JetBrains Mono NL';
+  font-family: 'Ioskeley Mono';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../fonts/JetBrainsMonoNL-Regular.ttf') format('truetype');
+  src: url('../fonts/IoskeleyMono-Regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'JetBrains Mono NL';
+  font-family: 'Ioskeley Mono';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('../fonts/JetBrainsMonoNL-Medium.ttf') format('truetype');
+  src: url('../fonts/IoskeleyMono-Medium.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'JetBrains Mono NL';
+  font-family: 'Ioskeley Mono';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('../fonts/JetBrainsMonoNL-SemiBold.ttf') format('truetype');
+  src: url('../fonts/IoskeleyMono-SemiBold.woff2') format('woff2');
 }
