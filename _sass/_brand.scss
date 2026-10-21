@@ -1,47 +1,50 @@
 // _sass/_brand.scss
 // -----------------------------------------------------------------------------
-// SphereQuant brand — Anthropic black with a Bloomberg-terminal amber accent.
-// Type: Bergoom (open-source, Bloomberg Prop-inspired) everywhere.
+// SphereQuant brand — Visualize Value-style monochrome, one optional signal.
+// Type: Cal Sans headings, Inter body, Ioskeley Mono labels.
 // -----------------------------------------------------------------------------
 
 // Sass copies for legacy components that need real colours at compile time.
-$eq-light-foreground: #F0EEE6;
-$eq-light-muted: #A6A39A;
-$eq-light-border-subtle: #2A2927;
-$eq-light-blue: #FB8B1E;
+$eq-light-foreground: #FFFFFF;
+$eq-light-muted: #8C8C8C;
+$eq-light-border-subtle: #262626;
+$eq-light-blue: #FF9F1C;
 
+// Black and white with one amber signal colour for labels and data.
+// `--amber` names that signal colour; buttons use --primary (white).
+
+// Mono + amber signal
 :root {
   color-scheme: dark;
 
-  // Neutrals — Anthropic black and warm ivory text
-  --bg: #141413;
-  --fg: #F0EEE6;
-  --card: #1C1C1A;
-  --surface-raised: #222220;
-  --surface-sunken: #0F0F0E;
-  --muted: #A6A39A;
-  --border: #4A4843;
-  --border-subtle: #2A2927;
-  --accent-bg: #3A2A12;
-  --row-hover: #1F1F1D;
+  --bg: #000000;
+  --fg: #FFFFFF;
+  --card: #0D0D0D;
+  --surface-raised: #141414;
+  --surface-sunken: #000000;
+  --muted: #8C8C8C;
+  --border: #3A3A3A;
+  --border-subtle: #262626;
+  --accent-bg: #2A1D0A;
+  --row-hover: #111111;
 
-  // Bloomberg amber drives actions and highlights
-  --amber: #FB8B1E;
-  --amber-hover: #FFA54A;
-  --primary: var(--amber);
-  --primary-fg: #141413;
-  --blue: #FB8B1E;
-  --red: #FF6B70;
+  --amber: #FF9F1C;
+  --amber-hover: #FFB54D;
+  --primary: #FFFFFF;
+  --primary-hover: #D9D9D9;
+  --primary-fg: #000000;
+  --blue: var(--amber);
+  --red: #FF5C5C;
 
   --logo-filter: none;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow: none;
 
   // Type
   --font-bergoom: 'Bergoom', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-serif: 'Cal Sans', 'Inter', sans-serif;
-  --font-mono: 'Ioskeley Mono', ui-monospace, Consolas, monospace;
-  --font-logo: var(--font-mono);
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Geist', 'IBM Plex Sans', sans-serif;
+  --font-mono: 'Roboto Mono', ui-monospace, Consolas, monospace;
+  --font-logo: 'Geist', 'IBM Plex Sans', sans-serif;
   --tracking: -0.01em;
 
   --radius: 8px;

@@ -1,3 +1,4 @@
+$mono-labels: ".eyebrow, .section-label, .stats dt, .hub-stats dt, .layer-tag, .skill-num, .tag, .timeline .when, .team-meta";
 // _sass/_site.scss
 // Site-wide styles. Loaded last so it overrides the legacy theme components.
 // All colours come from the custom properties in _brand.scss.
@@ -15,7 +16,7 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-sans);
-  font-size: 17px;
+  font-size: 14.5px;
   line-height: 1.6;
   letter-spacing: var(--tracking);
   -webkit-font-smoothing: antialiased;
@@ -202,13 +203,13 @@ img { max-width: 100%; height: auto; }
   color: var(--primary-fg);
   &:visited { color: var(--primary-fg); }
   &:hover {
-    background: var(--amber-hover);
-    border-color: var(--amber-hover);
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
     color: var(--primary-fg);
   }
 }
 
-.btn-lg { padding: 0.95rem 1.6rem; font-size: 16px; }
+.btn-lg { padding: 0.95rem 1.6rem; font-size: 13.5px; }
 
 // =======================
 // Home hero
@@ -239,7 +240,7 @@ img { max-width: 100%; height: auto; }
 
   p {
     font-family: var(--font-sans);
-    font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+    font-size: clamp(1.02rem, 1.9vw, 1.23rem);
     line-height: 1.5;
     color: var(--muted);
     max-width: 640px;
@@ -270,7 +271,7 @@ img { max-width: 100%; height: auto; }
     margin: 0 0 1rem;
   }
   > p {
-    font-size: 1.1rem;
+    font-size: 0.935rem;
     color: var(--muted);
     max-width: 640px;
     margin: 0;
@@ -303,7 +304,7 @@ img { max-width: 100%; height: auto; }
     margin: 0 0 0.75rem;
   }
   p {
-    font-size: 0.98rem;
+    font-size: 0.83rem;
     color: var(--muted);
     line-height: 1.6;
     margin: 0;
@@ -380,7 +381,7 @@ img { max-width: 100%; height: auto; }
   h4 { font-size: 1.1rem; margin: 2rem 0 0.5rem; }
 
   p, li {
-    font-size: 1.0625rem;
+    font-size: 0.9rem;
     line-height: 1.7;
     color: var(--fg);
   }
@@ -395,7 +396,7 @@ img { max-width: 100%; height: auto; }
     padding: 0.25rem 0 0.25rem 1.25rem;
     border-left: 2px solid var(--amber);
     font-family: var(--font-sans);
-    font-size: 1.25rem;
+    font-size: 1.06rem;
     color: var(--muted);
   }
 
@@ -404,7 +405,7 @@ img { max-width: 100%; height: auto; }
     border-collapse: separate;
     border-spacing: 0;
     margin: 2rem 0;
-    font-size: 0.95rem;
+    font-size: 0.81rem;
     font-variant-numeric: tabular-nums;
     background: var(--card);
     border: 1px solid var(--border-subtle);
@@ -501,7 +502,7 @@ img { max-width: 100%; height: auto; }
 
 .faq-answer {
   padding: 0 0 1.5rem;
-  p, li { color: var(--muted); font-size: 1.0625rem; line-height: 1.7; }
+  p, li { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
   p { margin: 0 0 1rem; }
   ul { list-style: disc; padding-left: 1.4rem; margin: 0 0 1rem; }
   li { margin-bottom: 0.4rem; }
@@ -594,7 +595,7 @@ img { max-width: 100%; height: auto; }
 
 .layers-note {
   margin-top: 1.5rem !important;
-  font-size: 0.98rem;
+  font-size: 0.83rem;
   a { color: var(--amber); text-decoration: none; &:hover { text-decoration: underline; } }
 }
 
@@ -646,7 +647,7 @@ img { max-width: 100%; height: auto; }
   padding: 1.5rem 1.5rem 1.75rem;
 
   h3 { font-size: 1.25rem; margin: 0.5rem 0; }
-  p { color: var(--muted); font-size: 0.95rem; margin: 0; line-height: 1.55; }
+  p { color: var(--muted); font-size: 0.81rem; margin: 0; line-height: 1.55; }
 
   &:not(:last-child)::after {
     content: '→';
@@ -681,7 +682,7 @@ img { max-width: 100%; height: auto; }
   padding: 1.5rem;
 
   h3 { font-size: 1.25rem; margin: 0.4rem 0 0.4rem; }
-  > p { color: var(--muted); font-size: 0.95rem; margin: 0 0 1rem; }
+  > p { color: var(--muted); font-size: 0.81rem; margin: 0 0 1rem; }
 }
 .skills {
   list-style: none;
@@ -719,7 +720,7 @@ img { max-width: 100%; height: auto; }
     color: var(--fg);
     margin: 0 0 0.5rem;
   }
-  .ask-a { color: var(--muted); font-size: 0.95rem; margin: 0; }
+  .ask-a { color: var(--muted); font-size: 0.81rem; margin: 0; }
   code { color: var(--amber); background: transparent; border: 0; padding: 0; }
 }
 
@@ -769,7 +770,36 @@ img { max-width: 100%; height: auto; }
 // FAQ group headings
 .faq-content > h2:not(:first-child) { margin-top: 3.5rem; }
 
-// Header: all lowercase
-.wordmark,
+// Header: logo in Geist caps, menu in mono caps
+.wordmark {
+  font-family: var(--font-logo);
+  font-size: 26px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
 .main-menu > ul > li > a,
-.main-menu-mobile ul li a { text-transform: lowercase; }
+.main-menu-mobile ul li a { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; }
+.header .container { height: 68px; gap: 2rem; }
+.main-menu > ul > li > a { font-size: 15px; padding: 8px 12px; }
+// Seven menu items don't fit beside the logo below ~1024px: use the hamburger
+@media (max-width: 1023.98px) {
+  .main-menu { display: none !important; }
+  .hamburger { display: inline-block !important; }
+}
+@media (max-width: 480px) {
+  .wordmark { font-size: 21px; }
+}
+
+// Mono labels (kickers, stat names, tags) are set in caps; mono inside copy
+// (code, skill names, dates) keeps normal case.
+:is(#{$mono-labels}) { text-transform: uppercase; }
+
+// Type scale chosen with the style panel: body 110%, intros 85% of that,
+// headings 84%, labels 128%. Applied with zoom so spacing scales with the text.
+$subtitles: ".professional-intro > p, .section > p, .cta-band p";
+.wrapper :is(p, li, td, th, dd, .faq-answer):not(#{$mono-labels}, #{$subtitles}) { zoom: 1.1; }
+.wrapper :is(li, dd) :is(p, li) { zoom: 1; }
+.wrapper :is(#{$subtitles}) { zoom: 0.935; }
+.wrapper :is(h1, h2, h3, h4) { zoom: 0.84; font-weight: 400 !important; }
+.wrapper :is(#{$mono-labels}):is(*, p) { zoom: 1.28; }
