@@ -1,4 +1,4 @@
-$mono-labels: ".eyebrow, .section-label, .stats dt, .hub-stats dt, .layer-tag, .skill-num, .tag, .timeline .when, .team-meta";
+$mono-labels: ".eyebrow, .section-label, .stats dt, .hub-stats dt, .layer-tag, .skill-num, .tag";
 // _sass/_site.scss
 // Site-wide styles. Loaded last so it overrides the legacy theme components.
 // All colours come from the custom properties in _brand.scss.
@@ -562,24 +562,17 @@ img { max-width: 100%; height: auto; }
     gap: 1rem;
   }
   .footer-brand {
-    font-family: var(--font-serif) !important;
-    font-size: 1.1rem;
+    font-family: var(--font-logo) !important;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
     color: var(--fg);
   }
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    a { color: var(--muted); text-decoration: none; font-size: 14px; &:hover { color: var(--amber); } }
-  }
   .footer-legal {
-    width: 100%;
     font-size: 13px;
     color: var(--muted);
-    margin: 1rem 0 0;
+    margin: 0;
   }
 }
 
@@ -735,11 +728,12 @@ img { max-width: 100%; height: auto; }
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: 1.5rem;
+    align-items: baseline;
     padding: 1.1rem 0;
     border-bottom: 1px solid var(--border-subtle);
     @media (max-width: 640px) { grid-template-columns: 1fr; gap: 0.25rem; }
   }
-  .when { font-family: var(--font-mono); font-size: 13px; color: var(--amber); padding-top: 0.2rem; }
+  .when { font-family: var(--font-mono); font-size: 11.7px; color: var(--amber); }
   .what { color: var(--muted); strong { color: var(--fg); font-weight: 600; } }
 }
 
@@ -795,11 +789,14 @@ img { max-width: 100%; height: auto; }
 // (code, skill names, dates) keeps normal case.
 :is(#{$mono-labels}) { text-transform: uppercase; }
 
-// Type scale chosen with the style panel: body 110%, intros 85% of that,
-// headings 84%, labels 128%. Applied with zoom so spacing scales with the text.
-$subtitles: ".professional-intro > p, .section > p, .cta-band p";
-.wrapper :is(p, li, td, th, dd, .faq-answer):not(#{$mono-labels}, #{$subtitles}) { zoom: 1.1; }
-.wrapper :is(li, dd) :is(p, li) { zoom: 1; }
-.wrapper :is(#{$subtitles}) { zoom: 0.935; }
+// Type scale: one readable body size for all copy, and monospace inside copy
+// (code, dates, skill names, stat names) at the same size. Only the labels that
+// sit above headings are enlarged.
+$body-size: 17px;
+.wrapper :is(p, li, td, th, dd, .faq-answer, .timeline .what):not(.price, .stats dd, .hub-stats dd, .eyebrow, .section-label, .layer-tag, .skill-num) { font-size: $body-size; }
+.wrapper .professional-intro > p { font-size: 19px !important; }
+.wrapper :is(.section, .cta-band) > p:not(.section-label, .price), .wrapper .cta-band p:not(.price) { font-size: 18px !important; }
+.wrapper :is(code, .timeline .when, .skills li, .stats dt, .hub-stats dt, .tag) { font-size: $body-size !important; }
+.wrapper :is(p, li, dd) code { font-size: 1em; }
 .wrapper :is(h1, h2, h3, h4) { zoom: 0.84; font-weight: 400 !important; }
-.wrapper :is(#{$mono-labels}):is(*, p) { zoom: 1.28; }
+.wrapper :is(.eyebrow, .section-label, .layer-tag, .skill-num):is(*, p) { zoom: 1.28; }

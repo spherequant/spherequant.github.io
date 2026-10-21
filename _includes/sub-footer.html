@@ -2,12 +2,6 @@
   <div class="container">
     <div class="sub-footer-inner">
       <span class="footer-brand">{{ site.title }}</span>
-      <ul class="footer-links">
-        {% assign mainmenu = site.data.menus.main | sort: 'weight' %}
-        {% for item in mainmenu %}
-        <li><a href="{{ item.url | relative_url }}">{{ item.name }}</a></li>
-        {% endfor %}
-      </ul>
       <p class="footer-legal">&copy; {{ site.time | date: '%Y' }} Hemisphere Research Capital. All rights reserved.</p>
     </div>
   </div>
