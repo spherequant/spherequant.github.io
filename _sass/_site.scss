@@ -768,3 +768,8 @@ img { max-width: 100%; height: auto; }
 
 // FAQ group headings
 .faq-content > h2:not(:first-child) { margin-top: 3.5rem; }
+
+// Header: all lowercase
+.wordmark,
+.main-menu > ul > li > a,
+.main-menu-mobile ul li a { text-transform: lowercase; }
