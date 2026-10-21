@@ -29,7 +29,7 @@
     theme: 'green',
     heading: 'Geist', body: 'Inter', logo: 'Geist', mono: 'Roboto Mono',
     monoCase: 'uppercase', menuCase: 'none',
-    logoSize: 25, menuSize: 17, bodyScale: 100
+    logoSize: 25, menuSize: 17, headingScale: 100, subtitleScale: 100, labelScale: 100, bodyScale: 100
   };
 
   var params = new URLSearchParams(location.search);
@@ -77,6 +77,9 @@
     root.style.setProperty('--logo-size', cfg('logoSize') + 'px');
     root.style.setProperty('--menu-size', cfg('menuSize') + 'px');
     root.style.setProperty('--body-scale', cfg('bodyScale') / 100);
+    root.style.setProperty('--heading-scale', cfg('headingScale') / 100);
+    root.style.setProperty('--subtitle-scale', cfg('subtitleScale') / 100);
+    root.style.setProperty('--label-scale', cfg('labelScale') / 100);
   }
   apply();
 
@@ -144,6 +147,9 @@
       select('Menu case', 'menuCase', cases),
       slider('Logo size', 'logoSize', 14, 40, 'px'),
       slider('Menu size', 'menuSize', 11, 26, 'px'),
+      slider('Headings', 'headingScale', 50, 150, '%'),
+      slider('Subtitles', 'subtitleScale', 60, 150, '%'),
+      slider('Labels', 'labelScale', 60, 160, '%'),
       slider('Body text', 'bodyScale', 70, 130, '%')
     ].forEach(function (n) { body.appendChild(n); });
 

@@ -818,7 +818,12 @@ code, pre, kbd, samp { text-transform: uppercase; }
 :root[data-menu-case="none"] { --menu-case: none; }
 :root[data-menu-case="capitalize"] .main-menu > ul > li > a::first-letter { text-transform: uppercase; }
 .main-menu > ul > li > a { display: inline-block; }
-:root[style*="--body-scale"] .wrapper :is(p, li, td, th, dd, .faq-answer) { zoom: var(--body-scale); }
+// Subtitles = the intro paragraph under a heading; labels = small mono kickers above it.
+$subtitles: ".professional-intro > p, .section > p, .cta-band p";
+:root[style*="--body-scale"] .wrapper :is(p, li, td, th, dd, .faq-answer):not(#{$subtitles}) { zoom: var(--body-scale); }
+:root[style*="--heading-scale"] .wrapper :is(h1, h2, h3, h4) { zoom: var(--heading-scale); }
+:root[style*="--subtitle-scale"] .wrapper :is(#{$subtitles}) { zoom: var(--subtitle-scale); }
+:root[style*="--label-scale"] .wrapper :is(.eyebrow, .section-label) { zoom: var(--label-scale); }
 :root[style*="--body-scale"] .wrapper :is(li, dd) :is(p, li) { zoom: 1; }
 
 .style-panel {
