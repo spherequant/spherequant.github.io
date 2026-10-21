@@ -25,7 +25,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif);
-  font-weight: var(--heading-weight, 500);
+  font-weight: 400;
   color: var(--fg);
   letter-spacing: var(--tracking);
   line-height: 1.15;
@@ -770,87 +770,36 @@ img { max-width: 100%; height: auto; }
 // FAQ group headings
 .faq-content > h2:not(:first-child) { margin-top: 3.5rem; }
 
-// Header: menu in mono, first letter capitalised; logo in Geist lowercase
-.main-menu > ul > li > a,
-.main-menu-mobile ul li a { font-family: var(--font-mono); text-transform: none; letter-spacing: 0; }
-
-// Header: logo mark + 50% larger type
+// Header: logo in Geist caps, menu in mono caps
 .wordmark {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: var(--logo-size, 25px);
-  .mark { width: 24px; height: 24px; color: var(--amber); flex-shrink: 0; }
+  font-family: var(--font-logo);
+  font-size: 26px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
+.main-menu > ul > li > a,
+.main-menu-mobile ul li a { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.02em; }
 .header .container { height: 68px; gap: 2rem; }
-.main-menu > ul > li > a { font-size: var(--menu-size, 17px); padding: 8px 12px; }
+.main-menu > ul > li > a { font-size: 15px; padding: 8px 12px; }
 // Seven menu items don't fit beside the logo below ~1024px: use the hamburger
 @media (max-width: 1023.98px) {
   .main-menu { display: none !important; }
   .hamburger { display: inline-block !important; }
 }
 @media (max-width: 480px) {
-  .wordmark { font-size: 21px; .mark { width: 20px; height: 20px; } }
+  .wordmark { font-size: 21px; }
 }
-
 
 // Mono labels (kickers, stat names, tags) are set in caps; mono inside copy
 // (code, skill names, dates) keeps normal case.
 :is(#{$mono-labels}) { text-transform: uppercase; }
 
-.wordmark { font-family: var(--font-logo); font-weight: var(--logo-weight, 600); text-transform: lowercase; letter-spacing: -0.03em; }
-
-// Style panel (assets/js/style-panel.js): case and size controls
-:root[data-mono-case] :is(#{$mono-labels}) { text-transform: var(--mono-case) !important; }
-:root[data-mono-case="uppercase"] { --mono-case: uppercase; }
-:root[data-mono-case="lowercase"], :root[data-mono-case="capitalize"] { --mono-case: lowercase; }
-:root[data-mono-case="none"] { --mono-case: none; }
-:root[data-mono-case="capitalize"] :is(#{$mono-labels}) { display: inline-block; }
-:root[data-mono-case="capitalize"] :is(#{$mono-labels})::first-letter { text-transform: uppercase; }
-:root[data-menu-case] .main-menu > ul > li > a,
-:root[data-menu-case] .main-menu-mobile ul li a { text-transform: var(--menu-case) !important; }
-:root[data-menu-case="uppercase"] { --menu-case: uppercase; }
-:root[data-menu-case="lowercase"], :root[data-menu-case="capitalize"] { --menu-case: lowercase; }
-:root[data-menu-case="none"] { --menu-case: none; }
-:root[data-menu-case="capitalize"] .main-menu > ul > li > a::first-letter { text-transform: uppercase; }
-.main-menu > ul > li > a { display: inline-block; }
-// Subtitles = the intro paragraph under a heading; labels = small mono kickers above it.
+// Type scale chosen with the style panel: body 110%, intros 85% of that,
+// headings 84%, labels 128%. Applied with zoom so spacing scales with the text.
 $subtitles: ".professional-intro > p, .section > p, .cta-band p";
-:root[style*="--body-scale"] .wrapper :is(p, li, td, th, dd, .faq-answer):not(#{$mono-labels}) { zoom: var(--body-scale); }
-:root[style*="--heading-scale"] .wrapper :is(h1, h2, h3, h4) { zoom: var(--heading-scale); }
-:root[style*="--subtitle-scale"] .wrapper :is(#{$subtitles}) { zoom: calc(var(--body-scale, 1) * var(--subtitle-scale)); }
-:root[style*="--label-scale"] .wrapper :is(.eyebrow, .section-label) { zoom: var(--label-scale); }
-:root[style*="--body-scale"] .wrapper :is(li, dd) :is(p, li) { zoom: 1; }
-
-.style-panel {
-  position: fixed; right: 16px; bottom: 16px; z-index: 1000;
-  width: 280px;
-  background: var(--card); color: var(--fg);
-  border: 1px solid var(--border);
-  font: 12px/1.4 ui-monospace, Consolas, monospace;
-  text-transform: none;
-  button { font: inherit; cursor: pointer; }
-  .sp-toggle {
-    width: 100%; text-align: left; padding: 8px 12px;
-    background: transparent; color: var(--fg); border: 0;
-    &::after { content: '+'; float: right; }
-  }
-  &.open .sp-toggle::after { content: '−'; }
-  .sp-body { display: none; padding: 4px 12px 12px; max-height: 70vh; overflow: auto; }
-  &.open .sp-body { display: block; }
-  label { display: grid; grid-template-columns: 96px 1fr auto; align-items: center; gap: 8px; margin: 0 0 8px; }
-  label span { color: var(--muted); }
-  label em { font-style: normal; color: var(--muted); min-width: 38px; text-align: right; }
-  select, input { width: 100%; min-width: 0; }
-  select { background: var(--bg); color: var(--fg); border: 1px solid var(--border); padding: 4px; font: inherit; }
-  label:has(select) { grid-template-columns: 96px 1fr; }
-  .sp-actions { display: flex; gap: 8px; margin-top: 12px;
-    button { flex: 1; padding: 6px; background: var(--fg); color: var(--bg); border: 0; }
-    button + button { background: transparent; color: var(--fg); border: 1px solid var(--border); }
-  }
-}
-:root[style*="--heading-weight"] .wrapper :is(h1, h2, h3, h4) { font-weight: var(--heading-weight) !important; }
-:root[data-logo-case="uppercase"] .wordmark { text-transform: uppercase; }
-:root[data-logo-case="lowercase"] .wordmark { text-transform: lowercase; }
-:root[data-logo-case="capitalize"] .wordmark { text-transform: lowercase; display: inline-block; }
-:root[data-logo-case="capitalize"] .wordmark::first-letter { text-transform: uppercase; }
+.wrapper :is(p, li, td, th, dd, .faq-answer):not(#{$mono-labels}, #{$subtitles}) { zoom: 1.1; }
+.wrapper :is(li, dd) :is(p, li) { zoom: 1; }
+.wrapper :is(#{$subtitles}) { zoom: 0.935; }
+.wrapper :is(h1, h2, h3, h4) { zoom: 0.84; font-weight: 400 !important; }
+.wrapper :is(.eyebrow, .section-label) { zoom: 1.28; }
