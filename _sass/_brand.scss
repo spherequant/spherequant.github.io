@@ -38,8 +38,8 @@ $eq-light-blue: #FF9F1C;
 
   // Type
   --font-bergoom: 'Bergoom', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-sans: var(--font-bergoom);
-  --font-serif: var(--font-bergoom);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Cal Sans', 'Inter', sans-serif;
   --font-mono: 'Ioskeley Mono', ui-monospace, Consolas, monospace;
   --font-logo: var(--font-mono);
   --tracking: -0.01em;
